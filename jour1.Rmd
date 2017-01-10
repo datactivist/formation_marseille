@@ -380,3 +380,77 @@ Ex : recensement => pas diffusé comme données primaires et secondaires avant c
 - génération automatique de rapports
 - application
 - etc. 
+
+# Open data, big data, linked data...
+
+## Open data
+
+Voir https://www.cairn.info/revue-informations-sociales-2015-5-page-26.htm
+
+- Art 15 DDHC : "La Société a le droit de demander compte à tout Agent public de son administration."
+- "open governement" (USA, 1960s)
+- 1966 : FOIA
+- 1978 : CADA (données personnelles exclues, CNIL)
+
+## Open data
+
+Justifications :
+
+- transparence / accountability
+- innovation / "pétrole"
+- modernisation de l'administration
+
+## Open data
+
+- données publiques, généralement de gestion
+- librement utilisables (licences)
+- pas de redevance
+- [_Open definition_](http://opendefinition.org/)
+
+## Big data
+
+- émerge vers 2007/2008 (mais occurrences anciennes)
+- trois V : "volume", "velocity", "variety"
+- Kitchin ajoute exhaustivité, la résolution, la scalability 
+- NoSQL (terme apparaît en 2009)
+- promesse d'efficience, de prédiction, de nouvelles formes de savoir
+- données généralement fermées et privées
+
+## Linked data
+
+- poussé par W3C et Tim Berners-Lee
+- http://linkeddata.org/
+- web sémantique / web des données
+- RDF / SPARQL
+- wikidata => http://projetjourdain.org/network/index.html
+
+## API
+
+- Application programming interface => un programme vu de la surface
+- les machines parlent aux machines
+- donnée dynamique => partage partiel
+- un exemple : [overpass turbo](https://overpass-turbo.eu/)
+
+# Cadre juridique et protection de la vie privée
+
+## Cadre juridique de l'open data
+
+- [circulaire et vade mecum de 2013](https://www.etalab.gouv.fr/lepremierministreadresseaugouvernementlacirculairesurlouvertureetlepartagedesdonneespubliquesetlevade-mecumdelopendata)
+- lois NOTRE et Lemaire : principe de l'ouverture par défaut
+- Licence ouverte : permet la réutilisation la plus large
+- principes opposés : données nominatives, données personnelles, secrets prévus par la loi (défense, statistique, médical, commercial...)
+
+## Tout savoir sur l'open data au concret
+
+- [Guide Open Data France](http://www.opendatafrance.net/wp-content/uploads/2016/06/guideOD_communes_lois_juin2016_Web.pdf)
+- [Le rapport Trojette](http://www.modernisation.gouv.fr/laction-publique-se-transforme/en-ouvrant-les-donnees-publiques/remise-du-rapport-trojette-sur-louverture-des-donnees-publiques)
+- [Etat des lieux juridiques](https://www.cairn.info/revue-les-cahiers-du-numerique-2013-1-page-21.htm)
+
+
+# Evaluation
+
+## Evaluation
+
+https://frama.link/eval_mrs
+
+Merci !
