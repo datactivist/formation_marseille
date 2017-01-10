@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Initiation au big data</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="jour1_files/rmdshower/node_modules/shower-ribbon/styles/screen-4x3.css">
+  <link rel="stylesheet" href="jour1_files/rmdshower/style-common.css">
+  <link rel="stylesheet" href="jour1_files/rmdshower/style-ribbon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>
+  <script src="jour1_files/rmdshower/auto-render.min.js" type="text/javascript"></script>
+  
+  
+  
+            <link rel="stylesheet" href="presentations.css"/>
+      
+  
+</head>
+
+<body class="shower list">
+
+  <header class="caption">
+    <h1>Initiation au big data</h1>
+    <p>Ville de Marseille et datactivi.st</p>
+  </header>
+
+    
+  
+<section id="introduction-au-big-data" class="slide level2">
+<h2>Introduction au big data</h2>
+<p>
+</p>
+<p>
+</p>
+<p>
+</p>
+<p>
+<a href="mailto:joel@datactivi.st">Joël Gombin</a>
+</p>
+<p>
+Retrouvez les matériaux sur <a href="https://github.com/datactivist/formation_marseille" class="uri">https://github.com/datactivist/formation_marseille</a>
+</p>
+<p>
+Pad collaboratif : <a href="https://frama.link/bigdata_marseille" class="uri">https://frama.link/bigdata_marseille</a>
+</p>
+</section>
+<section id="minutes-20-donnees" class="slide level2">
+<h2>5 minutes, 20 données</h2>
+<ul>
+<li class="fragment next">vous avez 5 minutes</li>
+<li class="fragment next">vous devez trouver 20 données dans notre environnement immédiat</li>
+<li class="fragment next"><p>pas de recours aux écrans !</p></li>
+<li class="fragment next"><p><a href="http://infolabs.io/5-minutes-20-donnees">[source]</a></p></li>
+</ul>
+</section>
+<section id="objectifs-de-la-journee" class="titleslide slide level1"><h2 class="shout">Objectifs de la journée</h2></section><section id="objectifs-de-la-journee-1" class="slide level2">
+<h2>Objectifs de la journée</h2>
+<ul>
+<li class="fragment next">Comprendre ce qu’est une donnée</li>
+<li class="fragment next">Appréhender la variété des types de données existantes</li>
+<li class="fragment next">Comprendre le data pipeline</li>
+<li class="fragment next">Appréhender les enjeux politiques et juridiques attachés aux données</li>
+</ul>
+</section>
+<section id="quest-ce-quune-donnee" class="titleslide slide level1"><h2 class="shout">Qu’est-ce qu’une donnée ?</h2></section><section id="quest-ce-quune-donnee-1" class="slide level2">
+<h2>Qu’est-ce qu’une donnée ?</h2>
+<p>D’après vous ?</p>
+</section><section id="sociologie-historique-de-la-quantification" class="slide level2">
+<h2>Sociologie historique de la quantification</h2>
+<p><img src="img/desrosieres1.jpg" alt="center" /></p>
+</section><section id="sociologie-historique-de-la-quantification-1" class="slide level2">
+<h2>Sociologie historique de la quantification</h2>
+<p><img src="img/desrosieres2.jpg" alt="center" /></p>
+</section><section id="sociologie-historique-de-la-quantification-2" class="slide level2">
+<h2>Sociologie historique de la quantification</h2>
+<p>La statistique est à la fois :</p>
+<ul>
+<li class="fragment next">outil de gouvernement (<em>Statistik</em> - 18e siècle), et</li>
+<li class="fragment next">outil de preuve (<em>statistics</em> - 19e siècle)</li>
+</ul>
+</section><section id="sociologie-historique-de-la-quantification-3" class="slide level2">
+<h2>Sociologie historique de la quantification</h2>
+<blockquote>
+<p><a href="http://www.pressesdesmines.com/media/extrait/PourSocioHistExtr.pdf">Quantifier, c’est convenir puis mesurer</a></p>
+</blockquote>
+<blockquote>
+<p>Le verbe quantifier est employé ici dans un sens large : exprimer et faire exister sous une forme numérique ce qui, auparavant, était exprimé par des mots et non par des nombres. En revanche, l’idée de mesure, inspirée de l’épistémologie traditionnelle des sciences de la nature, implique que quelque chose existe sous une forme déjà mesurable selon une métrologie réaliste, comme la hauteur de la Tour Eiffel.</p>
+</blockquote>
+</section><section id="sociologie-historique-de-la-quantification-4" class="slide level2">
+<h2>Sociologie historique de la quantification</h2>
+<p>New Deal puis après-guerre : apogée de l’État keynésien =&gt; macro-économie</p>
+</section><section id="aux-sources-de-la-mise-en-donnees-du-monde" class="slide level2">
+<h2>Aux sources de la mise en données du monde</h2>
+<ul>
+<li class="fragment next">Rencontre, dans la Californie des années 1960, entre la Nouvelle Gauche et les Nouveaux Communalistes sur fond de LSD et de recherche militaire</li>
+<li class="fragment next">L’inspiration de la cybernétique (N. Wiener) : objets techniques et êtres humains constituent un même système sociotechhnique, régulé par l’information</li>
+<li class="fragment next">Exemple de Steward Brand, fondateur du <em>Whole Earth Catalog</em> puis de Wired =&gt; <a href="https://questionsdecommunication.revues.org/8619">“Forest Gump de l’Internet”</a></li>
+</ul>
+</section><section id="aux-sources-de-la-mise-en-donnees-du-monde-1" class="slide level2">
+<h2>Aux sources de la mise en données du monde</h2>
+<p><img src="img/wholeearthcatalog.jpg" alt="hauteur" /></p>
+</section><section id="la-pyramide-data-information-knowledge-wisdom" class="slide level2">
+<h2>La pyramide Data-Information-Knowledge-Wisdom</h2>
+<p><a href="https://commons.wikimedia.org/w/index.php?curid=37705247"><img src="img/DIKW_Pyramid.svg" alt="largeur" /></a></p>
+</section><section id="la-pyramide-data-information-knowledge-wisdom-1" class="slide level2">
+<h2>La pyramide Data-Information-Knowledge-Wisdom</h2>
+<p>Attribuée à <a href="http://en.wikipedia.org/wiki/Russell_L._Ackoff">Russell Ackoff</a>, 1989</p>
+<p>Les données peuvent être des :</p>
+<ul>
+<li class="fragment next">faits</li>
+<li class="fragment next">signal/stimulis</li>
+<li class="fragment next">symboles</li>
+</ul>
+</section><section id="etymologie" class="slide level2">
+<h2>Etymologie</h2>
+<p>Latin : <em>dare</em> (donner) &gt; <em>datum</em> (donné) &gt; <em>data</em> (donnés)</p>
+<p>Ce qui est évident, va de soi, est accepté sans discussion</p>
+<blockquote>
+<p>Facts are ontological, evidence is epistemological, data is rhetorical. A datum may also be a fact, just as a fact may be evidence. But, from its first vernacular formulation, the existence of a datum has been independent of any consideration of corresponding ontological truth. When a fact is proven false, it ceases to be a fact. False data is data nonetheless.</p>
+</blockquote>
+<p><a href="https://mitpress.mit.edu/books/raw-data-oxymoron">Rosenberg, 2013</a></p>
+</section><section id="etymologie-1" class="slide level2">
+<h2>Etymologie</h2>
+<p>Ambiguïté en anglais de “data” qui peut être un pluriel ou un singulier collectif.</p>
+<blockquote>
+<p>Whether in mathematics, theology, or another field, use of the term “data” emphasized the argumentative context as well as the idea of problem-solving by bringing into relationship things known and things unknown</p>
+</blockquote>
+</section><section id="usage-de-data" class="slide level2">
+<h2>Usage de “data”</h2>
+<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=data&amp;year_start=1600&amp;year_end=2000&amp;corpus=15&amp;smoothing=3&amp;share=&amp;direct_url=t1%3B%2Cdata%3B%2Cc0" width="100%" height="600" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">
+</iframe>
+</section><section id="usage-de-donnees" class="slide level2">
+<h2>Usage de “données”</h2>
+<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=donn%C3%A9es&amp;year_start=1600&amp;year_end=2000&amp;corpus=19&amp;smoothing=3&amp;share=&amp;direct_url=t1%3B%2Cdonn%C3%A9es%3B%2Cc0" width="100%" height="600" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">
+</iframe>
+</section><section id="usage-de-data-1" class="slide level2">
+<h2>Usage de “data”</h2>
+<p>Le sens moderne apparaît à la fin du 18e siècle =&gt; renvoie à des expériences, des collectes d’éléments.</p>
+</section><section id="raw-data-is-an-oxymoron" class="slide level2">
+<h2>“Raw data” is an oxymoron</h2>
+<blockquote>
+<p>Data are always already “cooked” and never entirely “raw.”</p>
+</blockquote>
+<blockquote>
+<p>Data need to be imagined <em>as</em> data to exist and function as such, and the imagination of data entails an interpretive base.</p>
+</blockquote>
+<p><a href="https://mitpress.mit.edu/books/raw-data-oxymoron">[Source]</a></p>
+</section>
+<section id="donnees-donnees-quelles-donnees" class="titleslide slide level1"><h2 class="shout">Données, données… quelles données ?</h2></section><section id="donnees-donnees-quelles-donnees-1" class="slide level2">
+<h2>Données, données… quelles données ?</h2>
+<p><a href="https://books.google.fr/books?hl=fr&amp;lr=&amp;id=GfOICwAAQBAJ&amp;oi=fnd&amp;pg=PP1&amp;dq=kitchin+data+revolution&amp;ots=pcyfMTZh-V&amp;sig=dQyPTL3AIN_4RdWvtBFw4VjdAa4#v=onepage&amp;q=kitchin%20data%20revolution&amp;f=false"><img src="img/kitchin.jpg" alt="hauteur" /></a></p>
+</section><section id="donnees-donnees-quelles-donnees-2" class="slide level2">
+<h2>Données, données… quelles données ?</h2>
+<blockquote>
+<p>Data are commonly understood to be the raw material produced by abstracting the world into categories, measures and other representational forms – numbers, characters, symbols, images, sounds, electromagnetic waves, bits – that constitute the building blocks from which information and knowledge are created.</p>
+</blockquote>
+<p>=&gt; enregistrabilité =&gt; briques de base (“buildings blocks”)</p>
+</section><section id="donnees-donnees-quelles-donnees-3" class="slide level2">
+<h2>Données, données… quelles données ?</h2>
+<blockquote>
+<p>While many analysts may accept data at face value, and treat them as if they are neutral, objective, and pre-analytic in nature, data are in fact framed technically, economically, ethically, temporally, spatially and philosophically.</p>
+</blockquote>
+<blockquote>
+<p>Technically, then, what we understand as data are actually capta (derived from the Latin capere, meaning ‘to take’); those units of data that have been selected and harvested from the sum of all potential data.</p>
+</blockquote>
+<p><a href="https://books.google.fr/books?hl=fr&amp;lr=&amp;id=GfOICwAAQBAJ&amp;oi=fnd&amp;pg=PP1&amp;dq=kitchin+data+revolution&amp;ots=pcyfMTZh-V&amp;sig=dQyPTL3AIN_4RdWvtBFw4VjdAa4#v=onepage&amp;q=kitchin%20data%20revolution&amp;f=false">[Source]</a></p>
+<blockquote>
+<p>« Décidément, on ne devrait jamais parler de “données”, mais toujours d’“obtenues”. » - Bruno Latour, 1993</p>
+</blockquote>
+</section><section id="donnees-quantitatives-et-qualitatives" class="slide level2">
+<h2>Données quantitatives et qualitatives</h2>
+<ul>
+<li class="fragment next">Données quantitatives : enregistrées sous forme de nombres</li>
+<li class="fragment next">nominale (marié/célibataire/divorcé/veuf)</li>
+<li class="fragment next">ordinale (faible, moyen, fort)</li>
+<li class="fragment next">intervalles (température en degrés Celsius)</li>
+<li class="fragment next">ratio (taille en cm)</li>
+</ul>
+</section><section id="donnees-quantitatives-et-qualitatives-1" class="slide level2">
+<h2>Données quantitatives et qualitatives</h2>
+<ul>
+<li class="fragment next">Données qualitatives : non numérique =&gt; texte, image, vidéo, son, musique…</li>
+<li class="fragment next">peut être convertie en données quantitatives</li>
+<li class="fragment next">mais comment ?</li>
+<li class="fragment next">risque de perdre la richesse des données originales</li>
+<li class="fragment next">analyse qualitative</li>
+</ul>
+</section><section id="donnees-structurees-et-non-structurees" class="slide level2">
+<h2>Données structurées et non structurées</h2>
+<p>Données structurées : dotées d’un modèle</p>
+<ul>
+<li class="fragment next">Ex : base de données relationnelle SQL</li>
+<li class="fragment next">Lisibles machine</li>
+<li class="fragment next">Faciles à analyser, manipuler, visualiser…</li>
+</ul>
+<p>Données semi-structurées : pas de modèle prédéfini. Structure irrégulière, implicite… mais données organisées néanmoins, ensemble raisonnable de champs</p>
+<ul>
+<li class="fragment next">Exemple : XML, JSON</li>
+<li class="fragment next">possible de trier, ordonner et structurer les données</li>
+</ul>
+</section><section id="donnees-structurees-et-non-structurees-1" class="slide level2">
+<h2>Données structurées et non structurées</h2>
+<p>Données non structurées : pas de structure commune identifiable</p>
+<ul>
+<li class="fragment next">Exemple : BDD NoSQL</li>
+<li class="fragment next">généralement qualitatives</li>
+<li class="fragment next">difficilement combinées ou analysées quantitativement</li>
+<li class="fragment next">les données non structurées croitraient 15x plus que les données structurées</li>
+<li class="fragment next">machine learning de + en + capable d’analyser ces données.</li>
+</ul>
+</section><section id="donnees-capturees-et-donnees-echappees" class="slide level2">
+<h2>Données capturées et données échappées</h2>
+<ul>
+<li class="fragment next">Données capturées : observation, enquête, expérimentation, prise de notes, senseurs… =&gt; intention de générer des données</li>
+<li class="fragment next">Données échappées : sous-produit d’un engin ou d’un système dont la fonction première est autre</li>
+<li class="fragment next">Données transitoires : échappées qui ne sont jamais examinées, transformées ou analysées</li>
+</ul>
+<p>=&gt; brutes car non converties ou combinées</p>
+</section><section id="donnees-derivees" class="slide level2">
+<h2>Données dérivées</h2>
+<ul>
+<li class="fragment next">Résultat d’un traitement ou une analyse supplémentaire de données capturées.</li>
+<li class="fragment next">Souvent le résultat d’un modèle</li>
+</ul>
+</section><section id="donnees-derivees-1" class="slide level2">
+<h2>Données dérivées</h2>
+<p><img src="img/nasa.jpg" alt="hauteur" /></p>
+</section><section id="donnees-primaires-secondaires-et-tertaires" class="slide level2">
+<h2>Données primaires, secondaires et tertaires</h2>
+<ul>
+<li class="fragment next">primaires : générées par un chercheur dans un cadre expérimental</li>
+<li class="fragment next">secondaires : mises à disposition d’autrui pour être réutilisées</li>
+<li class="fragment next">tertiaires : données dérivées : décomptes, catégories, résultats statistiques</li>
+</ul>
+<p>Ex : recensement =&gt; pas diffusé comme données primaires et secondaires avant communicabilité des archives, diffusé comme données tertiaires</p>
+</section><section id="index-attributs-metadonnees" class="slide level2">
+<h2>Index, attributs, métadonnées</h2>
+<ul>
+<li class="fragment next">index : permettent l’identification et la mise en relation. Essentiels pour enrichir les données</li>
+<li class="fragment next">attributs : représentent les aspects d’un phénomène, mais ne sont pas des index (pas identifiants uniques)</li>
+<li class="fragment next">metadata : données sur les données. Peuvent être descriptives, structurelles ou administratives. Standard : Dublin Core.</li>
+</ul>
+</section><section id="bayesiens-et-frequentistes" class="slide level2">
+<h2>Bayésiens et fréquentistes</h2>
+<ul>
+<li class="fragment next">fréquentistes : le monde existe indépendamment de nos interactions avec lui. Données issues d’un échantillon aléatoire, réplicable (fréquence). Expériences et tests statistiques : un énon cé est falsifié ou non falsifié.</li>
+<li class="fragment next">bayésiens : la statistique porte sur les croyances à l’égard du monde, qu’on fait évoluer au regard des données collectées</li>
+</ul>
+</section><section id="bayesiens-et-frequentistes-1" class="slide level2">
+<h2>Bayésiens et fréquentistes</h2>
+<p><img src="img/Thomas_Bayes.gif" alt="hauteur" /></p>
+</section>
+<section id="le-pipeline-de-donnees" class="titleslide slide level1"><h2 class="shout">Le pipeline de données</h2></section><section id="le-pipeline-de-donnees-1" class="slide level2">
+<h2>Le pipeline de données</h2>
+<p><img src="img/pipeline.png" alt="largeur" /></p>
+</section><section id="trouver-les-donnees" class="slide level2">
+<h2>Trouver les données</h2>
+<ul>
+<li class="fragment next">Comment faites-vous ?</li>
+<li class="fragment next">Dépôts internes</li>
+<li class="fragment next">CDO</li>
+<li class="fragment next">Dépôts externes (ex. www.data.gouv.fr)</li>
+</ul>
+</section><section id="acquerir-les-donnees" class="slide level2">
+<h2>Acquérir les données</h2>
+<ul>
+<li class="fragment next">format des données</li>
+<li class="fragment next">qualité des données</li>
+<li class="fragment next">documentation des données / métadonnées</li>
+<li class="fragment next">ETL / connecteurs</li>
+<li class="fragment next">données “chaudes” / données “froides” (stock/flux)</li>
+</ul>
+</section><section id="verifier-les-donnees" class="slide level2">
+<h2>Vérifier les données</h2>
+<ul>
+<li class="fragment next">sanity check</li>
+<li class="fragment next">comparer à un schéma théorique</li>
+<li class="fragment next">tests qualité (voir <a href="http://infolabs.io/qualite-donnees" class="uri">http://infolabs.io/qualite-donnees</a>)</li>
+<li class="fragment next">les mauvaises données sont partout <a href="https://github.com/Quartz/bad-data-guide" class="uri">https://github.com/Quartz/bad-data-guide</a></li>
+</ul>
+</section><section id="nettoyer-les-donnees" class="slide level2">
+<h2>Nettoyer les données</h2>
+<ul>
+<li class="fragment next">paradigme du <a href="http://vita.had.co.nz/papers/tidy-data.pdf"><em>tidy data</em></a> (Hadley Wickham)</li>
+</ul>
+<blockquote>
+<p>“Happy families are all alike; every unhappy family is unhappy in its own way.” – Leon Tolstoï</p>
+</blockquote>
+<blockquote>
+<p>“Tidy datasets are all alike, but every messy dataset is messy in its own way.” – Hadley Wickham</p>
+</blockquote>
+</section><section id="nettoyer-les-donnees-1" class="slide level2">
+<h2>Nettoyer les données</h2>
+<ul>
+<li class="fragment next">paradigme du <a href="http://vita.had.co.nz/papers/tidy-data.pdf"><em>tidy data</em></a> (Hadley Wickham)</li>
+<li class="fragment next">chaque variable correspond à une colonne</li>
+<li class="fragment next">chaque observation/individu correspond à une ligne</li>
+<li class="fragment next">chaque type d’unité d’observation correspond à une table</li>
+<li class="fragment next">chaque cellule comporte une donnée</li>
+</ul>
+</section><section id="nettoyer-les-donnees-2" class="slide level2">
+<h2>Nettoyer les données</h2>
+<p>5 problèmes fréquents :</p>
+<ul>
+<li class="fragment next"><em>les noms des colonnes sont des valeurs, pas des variables</em></li>
+</ul>
+</section><section id="nettoyer-les-donnees-3" class="slide level2">
+<h2>Nettoyer les données</h2>
+<p><img src="img/pewrow.png" alt="largeur" /></p>
+</section><section id="nettoyer-les-donnees-4" class="slide level2">
+<h2>Nettoyer les données</h2>
+<p><img src="img/pewlong.png" alt="largeur" /></p>
+</section><section id="nettoyer-les-donnees-5" class="slide level2">
+<h2>Nettoyer les données</h2>
+<p>5 problèmes fréquents :</p>
+<ul>
+<li class="fragment next">les noms des colonnes sont des valeurs, pas des variables</li>
+<li class="fragment next"><em>plusieurs variables dans une colonne</em></li>
+</ul>
+</section><section id="nettoyer-les-donnees-6" class="slide level2">
+<h2>Nettoyer les données</h2>
+<p><img src="img/tbcol.png" alt="largeur" /></p>
+</section><section id="nettoyer-les-donnees-7" class="slide level2">
+<h2>Nettoyer les données</h2>
+<p><img src="img/tbtidy.png" alt="largeur" /></p>
+</section><section id="nettoyer-les-donnees-8" class="slide level2">
+<h2>Nettoyer les données</h2>
+<p>5 problèmes fréquents :</p>
+<ul>
+<li class="fragment next">les noms des colonnes sont des valeurs, pas des variables</li>
+<li class="fragment next">plusieurs variables dans une colonne</li>
+<li class="fragment next"><em>les variables sont stockées à la fois dans les lignes et les colonnes</em></li>
+</ul>
+</section><section id="nettoyer-les-donnees-9" class="slide level2">
+<h2>Nettoyer les données</h2>
+<p><img src="img/weathermessy.png" alt="largeur" /></p>
+</section><section id="nettoyer-les-donnees-10" class="slide level2">
+<h2>Nettoyer les données</h2>
+<p><img src="img/weathertidy.png" alt="largeur" /></p>
+</section><section id="nettoyer-les-donnees-11" class="slide level2">
+<h2>Nettoyer les données</h2>
+<p>5 problèmes fréquents :</p>
+<ul>
+<li class="fragment next">les noms des colonnes sont des valeurs, pas des variables</li>
+<li class="fragment next">plusieurs variables dans une colonne</li>
+<li class="fragment next">les variables sont stockées à la fois dans les lignes et les colonnes</li>
+<li class="fragment next"><em>plusieurs types dans une table</em></li>
+</ul>
+</section><section id="nettoyer-les-donnees-12" class="slide level2">
+<h2>Nettoyer les données</h2>
+<p><img src="img/billboardmessy.png" alt="largeur" /></p>
+</section><section id="nettoyer-les-donnees-13" class="slide level2">
+<h2>Nettoyer les données</h2>
+<p><img src="img/billboardtidy.png" alt="largeur" /></p>
+</section><section id="nettoyer-les-donnees-14" class="slide level2">
+<h2>Nettoyer les données</h2>
+<p>5 problèmes fréquents :</p>
+<ul>
+<li class="fragment next">les noms des colonnes sont des valeurs, pas des variables</li>
+<li class="fragment next">plusieurs variables dans une colonne</li>
+<li class="fragment next">les variables sont stockées à la fois dans les lignes et les colonnes</li>
+<li class="fragment next">plusieurs types dans une table</li>
+<li class="fragment next"><em>un type dans plusieurs tables</em></li>
+</ul>
+</section><section id="analyser-les-donnees" class="slide level2">
+<h2>Analyser les données</h2>
+<ul>
+<li class="fragment next">indicateurs</li>
+<li class="fragment next">tabulations</li>
+<li class="fragment next">modèles</li>
+<li class="fragment next">machine learning</li>
+<li class="fragment next">simulation</li>
+<li class="fragment next">etc.</li>
+</ul>
+</section><section id="presenter-les-resultats" class="slide level2">
+<h2>Présenter les résultats</h2>
+<ul>
+<li class="fragment next">datavisualisation</li>
+<li class="fragment next">génération automatique de rapports</li>
+<li class="fragment next">application</li>
+<li class="fragment next">etc.</li>
+</ul>
+</section>
+
+  <!--
+  To hide progress bar from entire presentation
+  just remove “progress” element.
+  -->
+  <!-- <div class="progress"></div> -->
+  <script src="jour1_files/rmdshower/node_modules/shower/node_modules/shower-core/shower.min.js"></script>
+  <!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+  <!-- Photos by John Carey, fiftyfootshadows.net -->
+
+    <script>renderMathInElement(document.body);</script>
+  
+  
+</body>
+</html>
