@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Initiation au big data</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="jour2_files/rmdshower/node_modules/shower-ribbon/styles/screen-4x3.css">
+  <link rel="stylesheet" href="jour2_files/rmdshower/style-common.css">
+  <link rel="stylesheet" href="jour2_files/rmdshower/style-ribbon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>
+  <script src="jour2_files/rmdshower/auto-render.min.js" type="text/javascript"></script>
+  
+  
+  
+            <link rel="stylesheet" href="presentations.css"/>
+      
+  
+</head>
+
+<body class="shower list">
+
+  <header class="caption">
+    <h1>Initiation au big data</h1>
+    <p>Ville de Marseille et datactivi.st</p>
+  </header>
+
+    
+  
+<section id="introduction-au-big-data" class="slide level2">
+<h2>Introduction au big data</h2>
+<p>
+</p>
+<p>
+</p>
+<p>
+</p>
+<p>
+<a href="mailto:samuel@datactivi.st">Samuel Goëta</a> et <a href="mailto:joel@datactivi.st">Joël Gombin</a>
+</p>
+<p>
+Retrouvez les matériaux sur <a href="https://github.com/datactivist/formation_marseille" class="uri">https://github.com/datactivist/formation_marseille</a>
+</p>
+<p>
+Pad collaboratif : <a href="https://frama.link/bigdata_marseille2" class="uri">https://frama.link/bigdata_marseille2</a>
+</p>
+</section>
+<section id="objectifs-de-la-journee" class="titleslide slide level1"><h2 class="shout">Objectifs de la journée</h2></section></section>
+<section id="retour-sur-lopen-data" class="titleslide slide level1"><h2 class="shout">Retour sur l’open data</h2></section></section>
+<section id="promesses-et-limites-de-la-mise-en-donnees-du-monde" class="titleslide slide level1"><h2 class="shout">Promesses et limites de la mise en données du monde</h2></section></section>
+<section id="quest-ce-que-la-data-science" class="titleslide slide level1"><h2 class="shout">Qu’est-ce que la data science ?</h2></section><section id="au-commencement-etait-la-statistique" class="slide level2">
+<h2>Au commencement était la statistique</h2>
+<ul>
+<li class="fragment next">une vieille science (18e siècle), pour aider les États (<em>Statistik</em>) mais aussi des entreprises privées (au départ, les assureurs =&gt; actuariat)</li>
+<li class="fragment next">fondée sur les probabilités</li>
+<li class="fragment next">faite par des mathématiciens</li>
+<li class="fragment next">forte dimension théorique</li>
+</ul>
+</section><section id="au-commencement-etait-la-statistique-1" class="slide level2">
+<h2>Au commencement était la statistique</h2>
+<iframe src="http://giphy.com/embed/9ADoZQgs0tyww" width="100%" height="450" frameBorder="0" class="giphy-embed" allowFullScreen>
+</iframe>
+<p>
+<a href="http://giphy.com/gifs/obama-awesome-statistics-9ADoZQgs0tyww">via GIPHY</a>
+</p>
+</section><section id="au-commencement-etait-la-statistique-2" class="slide level2">
+<h2>Au commencement était la statistique</h2>
+<blockquote>
+<p>I keep saying the sexy job in the next ten years will be statisticians. People think I’m joking, but who would’ve guessed that computer engineers would’ve been the sexy job of the 1990s?</p>
+</blockquote>
+<p>Hal Varian (Chief economist, Google), The McKinsey Quarterly, January 2009</p>
+</section><section id="data-science-is-the-new-statistics" class="slide level2">
+<h2>Data science is the new statistics?</h2>
+<blockquote>
+<p>“I think data-scientist is a sexed up term for a statistician”</p>
+</blockquote>
+<p><a href="http://www.statisticsviews.com/details/feature/5133141/Nate-Silver-What-I-need-from-statisticians.html">Nate Silver</a></p>
+</section><section id="data-science-is-the-new-statistics-1" class="slide level2">
+<h2>Data science is the new statistics?</h2>
+<p><a href="https://www.datanami.com/2016/01/14/as-data-science-evolves-its-taking-statistics-with-it/"><img src="img/data-science-venn-diagram.png" alt="hauteur" /></a></p>
+</section><section id="le-role-de-linformatique" class="slide level2">
+<h2>Le rôle de l’informatique</h2>
+<ul>
+<li class="fragment next">statistique classique : les problèmes doivent pouvoir être résolus de manière analytique (d’où le succès du fréquentisme)</li>
+<li class="fragment next">le développement de la puissance de calcul permet de résoudre des problèmes statistiques par la simulation ([MCMC][<a href="https://fr.wikipedia.org/wiki/M%C3%A9thode_de_Monte-Carlo_par_cha%C3%AEnes_de_Markov">https://fr.wikipedia.org/wiki/M%C3%A9thode_de_Monte-Carlo_par_cha%C3%AEnes_de_Markov</a>])</li>
+</ul>
+</section><section id="developpement-de-la-puissance-de-calcul" class="slide level2">
+<h2>Développement de la puissance de calcul</h2>
+<p><a href="http://visual.ly/infographic-about-computers"><img src="img/moore.png" alt="hauteur" /></a></p>
+</section><section id="developpement-de-la-capacite-de-stockage" class="slide level2">
+<h2>Développement de la capacité de stockage</h2>
+<p><a href="https://twitter.com/alicemazzy/status/655306196128280576?ref_src=twsrc%5Etfw"><img src="img/altavista.png" alt="hauteur" /></a></p>
+</section><section id="developpement-de-la-capacite-de-stockage-1" class="slide level2">
+<h2>Développement de la capacité de stockage</h2>
+<p><a href="https://aws.amazon.com/blogs/aws/aws-snowmobile-move-exabytes-of-data-to-the-cloud-in-weeks/"><img src="img/amazon.png" alt="largeur" /></a></p>
+<p><a href="https://aws.amazon.com/blogs/aws/aws-snowmobile-move-exabytes-of-data-to-the-cloud-in-weeks/"><img src="img/amazon2.jpg" alt="largeur" /></a></p>
+</section><section id="la-simulation-methode-reine-destimation-statistique" class="slide level2">
+<h2>La simulation, méthode reine d’estimation statistique</h2>
+<p>Monte Carlo Markov Chain (MCMC) : papier de Metropolis et Ulam (1949)</p>
+<p><a href="http://chifeng.scripts.mit.edu/stuff/mcmc-demo/#HamiltonianMC,banana" class="uri">http://chifeng.scripts.mit.edu/stuff/mcmc-demo/#HamiltonianMC,banana</a></p>
+</section>
+<section id="analyse-modelisation-machine-learning" class="titleslide slide level1"><h2 class="shout">Analyse, modélisation, machine learning</h2></section><section id="que-fait-on-une-fois-quon-a-des-donnees" class="slide level2">
+<h2>Que fait-on une fois qu’on a des données ?</h2>
+<ul>
+<li class="fragment next">Exploratory Data Analysis (Tukey, 1977) : pas d’hypothèse préalable à tester, plutôt pour générer des hypothèses. Rôle de la datavisualisation</li>
+<li class="fragment next">test d’hypothèse</li>
+</ul>
+</section><section id="que-fait-on-une-fois-quon-a-des-donnees-1" class="slide level2">
+<h2>Que fait-on une fois qu’on a des données ?</h2>
+<p><img src="img/test.png" alt="hauteur" /></p>
+</section><section id="que-fait-on-une-fois-quon-a-des-donnees-2" class="slide level2">
+<h2>Que fait-on une fois qu’on a des données ?</h2>
+<ul>
+<li class="fragment next">Exploratory Data Analysis (Tukey, 1977) : pas d’hypothèse préalable à tester, plutôt pour générer des hypothèses. Rôle de la datavisualisation</li>
+<li class="fragment next">test d’hypothèse</li>
+<li class="fragment next"><strong>modèle</strong></li>
+</ul>
+</section><section id="pourquoi-modeliser" class="slide level2">
+<h2>Pourquoi modéliser ?</h2>
+<p><img src="./img/Hibbs.jpg" alt="largeur" /></p>
+</section><section id="pourquoi-modeliser-1" class="slide level2">
+<h2>Pourquoi modéliser ?</h2>
+<ul>
+<li class="fragment next">pour analyser et expliquer</li>
+<li class="fragment next">pour prédire</li>
+</ul>
+</section><section id="modeliser-pour-analyser" class="slide level2">
+<h2>Modéliser pour analyser</h2>
+<ul>
+<li class="fragment next">un modèle réduit de la réalité</li>
+<li class="fragment next">isoler le rôle de chaque variable</li>
+<li class="fragment next">raisonner “toutes choses égales par ailleurs” (<em>ceteris paribus</em>)</li>
+</ul>
+</section><section id="modeliser-pour-analyser-1" class="slide level2">
+<h2>Modéliser pour analyser</h2>
+<p>Modéliser, c’est mettre en relation une <em>variable expliquée</em> (dépendante / prédite) et une ou plusieurs <em>variables explicatives</em> (indépendantes / prédicteurs).</p>
+<p><em>Y</em> = <em>f</em>(<em>X<sub>1</sub></em>, <em>X<sub>2</sub></em>, <em>X<sub>3</sub></em>, …, <em>X<sub>n</sub></em>)</p>
+<p>L’estimation du modèle consiste à estimer la valeur des paramètres (ou coefficients).</p>
+<p><em>Y</em> = <em>α</em> + <em>β<sub>1</sub>X<sub>1</sub></em> + <em>β<sub>2</sub>X<sub>2</sub></em> + <em>β<sub>3</sub>X<sub>3</sub></em> + · · · + <em>β<sub>n</sub>X<sub>n</sub></em> + <em>ε</em></p>
+</section><section id="modeliser-pour-analyser-2" class="slide level2">
+<h2>Modéliser pour analyser</h2>
+<p>Implique de faire des hypothèses sur la spécification du modèle :</p>
+<ul>
+<li class="fragment next">variables explicatives</li>
+<li class="fragment next">distribution des erreurs</li>
+</ul>
+</section><section id="les-distributions" class="slide level2">
+<h2>Les distributions</h2>
+<ul>
+<li class="fragment next">distribution théorique (ex : distribution normale)</li>
+<li class="fragment next">distribution empirique</li>
+</ul>
+<p><a href="http://shiny.stat.calpoly.edu/Prob_View/" class="uri">http://shiny.stat.calpoly.edu/Prob_View/</a></p>
+</section><section id="all-models-are-wrong-some-are-useful" class="slide level2">
+<h2>All models are wrong, some are useful</h2>
+<blockquote>
+<p>Since all models are wrong the scientist cannot obtain a “correct” one by excessive elaboration. On the contrary following William of Occam he should seek an economical description of natural phenomena.</p>
+</blockquote>
+<p><a href="https://dx.doi.org/10.1080%2F01621459.1976.10480949">George Box</a></p>
+</section><section id="all-models-are-wrong-some-are-useful-1" class="slide level2">
+<h2>All models are wrong, some are useful</h2>
+<p><img src="img/ockham.jpg" alt="largeur" /></p>
+</section><section id="estimation-dun-modele" class="slide level2">
+<h2>Estimation d’un modèle</h2>
+<p>Dans le cas d’un modèle linéaire =&gt; méthode des moindres carrés ordinaires (MCO/OLS)</p>
+<p><a href="http://setosa.io/ev/ordinary-least-squares-regression/" class="uri">http://setosa.io/ev/ordinary-least-squares-regression/</a></p>
+</section><section id="attention" class="slide level2">
+<h2>Attention !</h2>
+<ul>
+<li class="fragment next">Les modèles de régression linéaire supposent que les relations sont <em>linéaires</em> et <em>additives</em>.</li>
+<li class="fragment next">Les <em>résidus</em> sont supposés être <em>normalement distribués</em>.</li>
+<li class="fragment next">Les coefficients ne sont <em>pas standardisés</em> (on ne peut les comparer entre eux).</li>
+<li class="fragment next">Les coefficients s’interprètent <em>relativement à l’unité de la variable dépendante</em>.</li>
+</ul>
+</section><section id="attention-1" class="slide level2">
+<h2>Attention !</h2>
+<ul>
+<li class="fragment next">Les coefficients estiment l’effet d’une variable indépendante sur la variable dépendante <em>toutes choses égales par ailleurs</em>, c’est-à-dire en neutralisant l’effet des autres variables.</li>
+<li class="fragment next">La qualité globale du modèle peut être quantifié au travers du <em>R^2</em>, qui représente la part de variance (de la variable dépendante) expliquée.</li>
+<li class="fragment next">Pour les variables indépendantes catégoriques, on estime un coefficient par modalité, à l’exception de la première (baseline).</li>
+</ul>
+</section><section id="modeles-statistiques" class="slide level2">
+<h2>Modèles statistiques</h2>
+<p>Compromis entre intelligibilité et fidélité aux données</p>
+</section><section id="underfitting-et-overfitting" class="slide level2">
+<h2>Underfitting et overfitting</h2>
+<p><img src="img/underfit.png" alt="largeur" /></p>
+</section><section id="underfitting-et-overfitting-1" class="slide level2">
+<h2>Underfitting et overfitting</h2>
+<ul>
+<li class="fragment next">différencier données d’apprentissage et données de test</li>
+<li class="fragment next">n’utiliser les données de confirmation (test) qu’une fois</li>
+</ul>
+</section><section id="extrapolation" class="slide level2">
+<h2>Extrapolation</h2>
+<p><a href="http://r4ds.had.co.nz/model-basics.html"><img src="img/sinus.png" alt="largeur" /></a></p>
+</section><section id="et-le-machine-learning-alors" class="slide level2">
+<h2>Et le machine learning alors ?</h2>
+<ul>
+<li class="fragment next">Fondamentalement, modélisation et machine learning ne sont pas différents, du point de vue d’un statisticien : modéliser un <span class="math inline">\(Y\)</span> en fonction d’un vecteur de <span class="math inline">\(X_i\)</span></li>
+<li class="fragment next">une des différences principales toutefois : veut-on prévoir ou comprendre/analyser ?</li>
+<li class="fragment next">et donc : peut-on, veut-on interpréter les coefficients ?</li>
+<li class="fragment next">en pratique : machine learning porte sur des données plus complexes que la modélisation traditionnelle</li>
+<li class="fragment next">souvent beaucoup de valeurs manquantes</li>
+</ul>
+</section><section id="et-le-machine-learning-alors-1" class="slide level2">
+<h2>Et le machine learning alors ?</h2>
+<p><img src="img/ratings.png" alt="largeur" /></p>
+</section><section id="concepts-de-machine-learning" class="slide level2">
+<h2>Concepts de machine learning</h2>
+<ul>
+<li class="fragment next">Apprentissage supervisé vs non supervisé</li>
+<li class="fragment next">Apprentissage supervisé : il faut des données déjà classées/étalonnées. Souvent à la main !</li>
+</ul>
+</section><section id="apprentissage-supervise" class="slide level2">
+<h2>Apprentissage supervisé</h2>
+<p><a href="https://fakecaptcha.com"><img src="img/captcha.jpg" alt="largeur" /></a></p>
+</section><section id="apprentissage-supervise-1" class="slide level2">
+<h2>Apprentissage supervisé</h2>
+<p><a href="https://cquest.hackpad.com/OpenSolarMap-9oMiYswLksF"><img src="img/opensolarmap.png" alt="hauteur" /></a></p>
+</section><section id="apprentissage-supervise-2" class="slide level2">
+<h2>Apprentissage supervisé</h2>
+<p><a href="https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36955.pdf"><img src="img/inbox.png" alt="largeur" /></a></p>
+</section><section id="apprentissage-non-supervise" class="slide level2">
+<h2>Apprentissage non supervisé</h2>
+<ul>
+<li class="fragment next">problème majeur : réduction de la dimensionnalité</li>
+<li class="fragment next">jeux de données à très hautes dimensionnalité : impossible à explorer visuellement. Comment simplifier l’information et la résumer ?</li>
+</ul>
+<p><img src="img/house.png" alt="largeur" /></p>
+</section><section id="apprentissage-non-supervise-1" class="slide level2">
+<h2>Apprentissage non supervisé</h2>
+<p><a href="https://gallery.shinyapps.io/LDAelife/" class="uri">https://gallery.shinyapps.io/LDAelife/</a></p>
+</section>
+<section id="quelques-algorithmes-notoires" class="titleslide slide level1"><h2 class="shout">Quelques algorithmes notoires</h2></section><section id="apprentissage-supervise-3" class="slide level2">
+<h2>Apprentissage supervisé</h2>
+<ul>
+<li class="fragment next">la régression (linéaire, logistique, LOESS…), éventuellement régularisée (Ridge, LASSO…)</li>
+<li class="fragment next">les arbres de décision</li>
+<li class="fragment next">Naive Bayes (indépendance des attributs)</li>
+<li class="fragment next">Réseau bayésien (graphe de corrélation entre variables, inclut des <em>priors</em>)</li>
+<li class="fragment next">réseau de neurones (perceptron, back-propagation, Hopfield network…)</li>
+<li class="fragment next">Deep learning</li>
+<li class="fragment next">Random forest, Boosting, Gradient Boosting</li>
+<li class="fragment next">Support vector machine</li>
+</ul>
+</section><section id="apprentissage-non-supervise-2" class="slide level2">
+<h2>Apprentissage non supervisé</h2>
+<ul>
+<li class="fragment next">clustering : k-means, k-medians, CAH…</li>
+<li class="fragment next">réduction de la dimensionnalité : ACP, analyse géométrique des données, MDS, LDA topic clustering…</li>
+<li class="fragment next">analyses de réseau</li>
+</ul>
+</section><section id="le-cas-du-deep-learning" class="slide level2">
+<h2>Le cas du deep learning</h2>
+<p>Comment apprendre à un ordinateur à lire ?</p>
+<p><img src="img/digits.png" alt="largeur" /></p>
+</section><section id="le-cas-du-deep-learning-1" class="slide level2">
+<h2>Le cas du deep learning</h2>
+<p><img src="img/mnist_100_digits.png" alt="hauteur" /></p>
+</section><section id="le-cas-du-deep-learning-2" class="slide level2">
+<h2>Le cas du deep learning</h2>
+<p>Un perceptron</p>
+<p><img src="img/perceptron.png" alt="largeur" /></p>
+</section><section id="le-cas-du-deep-learning-3" class="slide level2">
+<h2>Le cas du deep learning</h2>
+<p><img src="img/smallnetwork.png" alt="largeur" /></p>
+</section><section id="le-cas-du-deep-learning-4" class="slide level2">
+<h2>Le cas du deep learning</h2>
+<p>Une sigmoïde</p>
+<p><img src="img/sigmoid.png" alt="largeur" /></p>
+</section><section id="le-cas-du-deep-learning-5" class="slide level2">
+<h2>Le cas du deep learning</h2>
+<p><img src="img/layers.png" alt="largeur" /></p>
+</section><section id="le-cas-du-deep-learning-6" class="slide level2">
+<h2>Le cas du deep learning</h2>
+<p><img src="img/number.gif" alt="hauteur" /></p>
+</section><section id="le-cas-du-deep-learning-7" class="slide level2">
+<h2>Le cas du deep learning</h2>
+<p><img src="img/hiddenlayer.png" alt="hauteur" /></p>
+</section><section id="le-cas-du-deep-learning-8" class="slide level2">
+<h2>Le cas du deep learning</h2>
+<p>Le gradient descent</p>
+<p><img src="img/valley_with_ball.png" alt="hauteur" /></p>
+<ul>
+<li class="fragment next">backpropagation</li>
+</ul>
+</section><section id="le-cas-du-deep-learning-9" class="slide level2">
+<h2>Le cas du deep learning</h2>
+<p><a href="http://chifeng.scripts.mit.edu/stuff/mcmc-demo/#HamiltonianMC,squiggle" class="uri">http://chifeng.scripts.mit.edu/stuff/mcmc-demo/#HamiltonianMC,squiggle</a></p>
+</section><section id="le-cas-du-deep-learning-10" class="slide level2">
+<h2>Le cas du deep learning</h2>
+<p><a href="http://playground.tensorflow.org/" class="uri">http://playground.tensorflow.org/</a></p>
+</section><section id="le-cas-du-deep-learning-11" class="slide level2">
+<h2>Le cas du deep learning</h2>
+<p>Décompose un problème complexe (reconnaissance faciale, par exemple) en un grand nombre de problèmes simples =&gt; beaucoup de couches cachées =&gt; <strong>abstraction</strong></p>
+</section><section id="les-points-auxquels-preter-attention" class="slide level2">
+<h2>Les points auxquels prêter attention</h2>
+<ul>
+<li class="fragment next">feature selection</li>
+<li class="fragment next">régularisation</li>
+<li class="fragment next">qualité du critère d’optimisation</li>
+<li class="fragment next">qualité de la distance/métrique retenue</li>
+<li class="fragment next">qualité des données d’input (GIGO)</li>
+<li class="fragment next">…</li>
+</ul>
+</section>
+<section id="lecosysteme-de-la-data-science" class="titleslide slide level1"><h2 class="shout">L’écosystème de la data science</h2></section><section id="bases-de-donnees" class="slide level2">
+<h2>Bases de données</h2>
+<p>Marché de ~ 25 milliards de $</p>
+<p>Oracle, Microsoft… MySQL, PostgreSQL, SQLite…</p>
+<p>DB orientées colonnes : MonetDB…</p>
+<p>NoSQL : MangoBD, CouchDB, BigTable (Google), Neo4j, Redis,</p>
+</section><section id="bases-de-donnees-distribuees" class="slide level2">
+<h2>Bases de données distribuées</h2>
+<p>Hadoop / Cloudera</p>
+<p>=&gt; MapReduce et HDFS</p>
+</section><section id="hadoop" class="slide level2">
+<h2>Hadoop</h2>
+<p><a href="https://www.chrisstucchio.com/blog/2013/hadoop_hatred.html"><img src="img/bigdata.jpeg" /></a></p>
+<p>Voir aussi <a href="http://ismydatabig.com/" class="uri">http://ismydatabig.com/</a></p>
+</section><section id="hadoop-mapreduce" class="slide level2">
+<h2>Hadoop / MapReduce</h2>
+<p>Permet une réelle scalabilité (ajoutons des nœuds), MAIS contraint fortement les algorithmes pouvant être utilisés, qui doivent être parallélisables. Ex : ACP =&gt; c’est compliqué</p>
+</section><section id="spark" class="slide level2">
+<h2>Spark</h2>
+<p>Principe similaire à Hadoop, mais travaille en mémoire vive de manière non séquentielle</p>
+<p>De 10 à 100x plus rapide que Hadoop</p>
+</section><section id="langages" class="slide level2">
+<h2>Langages</h2>
+<ul>
+<li class="fragment next">Java</li>
+<li class="fragment next">Python</li>
+<li class="fragment next">R</li>
+<li class="fragment next">Scala</li>
+<li class="fragment next">Julia</li>
+<li class="fragment next">SQL</li>
+<li class="fragment next">…</li>
+</ul>
+</section><section id="une-carte-interactive" class="slide level2">
+<h2>Une carte interactive</h2>
+<p><a href="http://xyz.insightdataengineering.com/blog/pipeline_map.html" class="uri">http://xyz.insightdataengineering.com/blog/pipeline_map.html</a></p>
+</section>
+<section id="evaluation" class="titleslide slide level1"><h2 class="shout">Evaluation</h2></section><section id="evaluation-1" class="slide level2">
+<h2>Evaluation</h2>
+<p><a href="https://frama.link/eval_mrs" class="uri">https://frama.link/eval_mrs</a></p>
+<p>Merci !</p>
+</section>
+
+  <!--
+  To hide progress bar from entire presentation
+  just remove “progress” element.
+  -->
+  <!-- <div class="progress"></div> -->
+  <script src="jour2_files/rmdshower/node_modules/shower/node_modules/shower-core/shower.min.js"></script>
+  <!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+  <!-- Photos by John Carey, fiftyfootshadows.net -->
+
+    <script>renderMathInElement(document.body);</script>
+  
+  
+</body>
+</html>
