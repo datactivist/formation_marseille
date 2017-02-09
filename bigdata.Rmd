@@ -1,0 +1,474 @@
+---
+title: 'Introduction au "big data"'
+date: "Janvier 2017"
+output:
+  rmdformats::readthedown:
+    highlight: kate
+    lightbox: true
+    use_bookdown: true
+    self_contained: false
+    css: styles.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
+
+**Retrouvez les fichiers de présentation [ici](https://github.com/datactivist/formation_marseille)**
+
+# Jour 1 : Les données
+
+Voir [ici les slides](./jour1.html)
+
+## Echauffement
+
+Jeu des [_5 minutes, 20 données_](http://infolabs.io/5-minutes-20-donnees)
+
+> Consigne => les participants doivent identifier 20 données dans leur environnement immédiat, en moins de 5 minutes 
+
+
+Les différents types de données sont :
+
+* comptées `(nombre d'hommes, de femmes ...)`
+* mesurées `(température, humidité)`
+* statuts `(allumé/éteint, ouvert/fermé)`
+* ...
+
+**Conclusion** : Ces données identifiées n'existent pas en tant que données, avant d'avoir été identifiées et formalisées.
+
+## Objectifs de la journée
+
+* Comprendre ce qu’est une donnée
+* Appréhender la variété des types de données existantes
+* Comprendre le data pipeline
+* Appréhender les enjeux politiques et juridiques attachés aux données
+
+## Qu'est-ce qu'une donnée ? 
+
+### Définition
+
+Pour comprendre les origines de la donnée, il faut s'intéresser à la sociologie historique de la quantification, avec notamment les ouvrages d'Alain Desrosières : 
+
+* [La politique des grands nombres](https://www.cairn.info/la-politique-des-grands-nombres--9782707165046.htm)
+* [Pour une sociologie historique de la quantification](http://books.openedition.org/pressesmines/901?lang=fr)
+
+Dès le départ, Alain Desrosières prend en compte les deux sens de la statistique : la **discipline scientifique** et le fait de faire de la **quantification** au service de l'exercice du pouvoir d'État (ex : INSEE).
+
+
+La statistique est à la fois :
+
+* outil de gouvernement (_Statistik_ - 18e siècle)
+* outil de preuve (_statistics_ - 19e siècle)
+
+> Quantifier, c'est convenir puis mesurer.
+
+Il faut d'abord convenir d'un étalon, d'une unité de mesure avant de mesurer.
+
+De même pour comparer des statuts sociaux, il faut une nomenclature commune. Dans ce cas, ça ne répond pas à des lois physiques ou naturelles, c'est souvent le résultat de conventions, luttes et débats.
+
+Exemple : 
+
+- Le cas de la mesure du chômage, qui pourrait naïvement donner l'impression de se mesurer comme on mesure la température. Cette mesure est très controversée. Les politiques utilisent souvent une partie de la donnée (la catégorie A des chiffres de Pôle emploi).
+
+### Historique
+
+À l'époque où commence le New Deal puis après-guerre, l'État apprend à quantifier et comptabiliser. 
+En France, l'INSEE apparait après la Libération.
+
+Aux sources de la mise en données du monde : 
+
+* Rencontre, dans la Californie des années 1960, entre la Nouvelle Gauche et les Nouveaux Communalistes (Hippies) sur fond de LSD et de recherche militaire (début de l'invention d'internet).
+* L’inspiration de la cybernétique (N. Wiener) : objets techniques et êtres humains constituent un même système sociotechnique, régulé par l’information. Si l'information circule facilement, les conflits entre individus sont réduits.
+* Exemple de Steward Brand, fondateur du Whole Earth Catalog puis de Wired => [“Forest Gump de l’Internet”](https://questionsdecommunication.revues.org/8619) il défend l'émancipation individuelle grâce aux technologies. Ceci participera au mouvement des **Hackers** et donnera lieu à divers ateliers de bidouilles. 
+
+
+#### Data-Information-Knowledge-Wisdom
+
+Selon beaucoup, la circulation de l'information, la communication et la transparence permettront de résoudre les tensions sociales.
+
+
+![](https://upload.wikimedia.org/wikipedia/commons/0/06/DIKW_Pyramid.svg)
+
+Selon l'auteur de cette Pyramide, [Russell Ackoff](http://en.wikipedia.org/wiki/Russell_L._Ackoff), les données peuvent être des :
+
+1. faits
+2. signaux/stimulis
+3. symboles
+
+### Étymologie
+
+`Latin : dare (donner) > datum (donné) > data (donnés)`
+
+Ce qui est évident, va de soi, est accepté **sans discussion**
+
+Selon [Rosenberg](https://mitpress.mit.edu/books/raw-data-oxymoron), lorsque le terme "data" apparaît en anglais, au 17e siècle : 
+
+> - Facts are ontological
+> - Evidence is epistemological
+> - Data is rhetorical
+
+- Donc contrairement aux faits, une "donnée" à cette époque peut être fausse tout en restant une donnée
+
+#### Ambiguïté du terme `data` : 
+
+`Data` peut être un pluriel ou un singulier collectif.
+
+Usage du mot `data` dans le temps selon Google Ngram : 
+
+<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=data&amp;year_start=1600&amp;year_end=2000&amp;corpus=15&amp;smoothing=3&amp;share=&amp;direct_url=t1%3B%2Cdata%3B%2Cc0" width="100%" height="300" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">
+</iframe>
+
+Usage du mot `données`selon Google Ngram : 
+
+<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=donn%C3%A9es&amp;year_start=1600&amp;year_end=2000&amp;corpus=19&amp;smoothing=3&amp;share=&amp;direct_url=t1%3B%2Cdonn%C3%A9es%3B%2Cc0" width="100%" height="300" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">
+</iframe>
+
+Le sens moderne apparaît à la fin du 18e siècle => renvoie à des expériences, des collectes d’éléments, une dimension empirique donc.
+
+
+#### “Raw data” is an oxymoron
+
+Tiré du [livre éponyme](https://mitpress.mit.edu/books/raw-data-oxymoron) : 
+
+> Data are always already “cooked” and never entirely “raw.”
+
+> Data need to be imagined as data to exist and function as such, and the imagination of data entails an interpretative base.
+
+Comme mentionné dans [l'échauffement](#echauffement), les données existent une fois identifiées.
+
+Voir le [TED talk](https://www.ted.com/talks/tim_berners_lee_the_year_open_data_went_worldwide?language=fr) sur l'open data de [Tim Berners Lee](https://fr.wikipedia.org/wiki/Tim_Berners-Lee)
+
+
+> Il n'existe pas de données brutes, il y a toujours une phase d'interprétation, d'imagination. 
+
+## Données, données... quelles données ?
+
+*Basé sur le livre [**"the data revolution"**](https://books.google.fr/books?hl=fr&lr=&id=GfOICwAAQBAJ&oi=fnd&pg=PP1&dq=kitchin+data+revolution&ots=pcyfMTZh-V&sig=dQyPTL3AIN_4RdWvtBFw4VjdAa4#v=onepage&q=kitchin%20data%20revolution&f=false) de Rob Kitchin*
+
+> Data are commonly understood to be the raw material produced by abstracting the world into categories, measures and other representational forms – numbers, characters, symbols, images, sounds, electromagnetic waves, bits – that constitute the building blocks from which information and knowledge are created.
+
+Il en déduit que l'enregistrabilité constitue la brique de base (“buildings blocks”)
+
+Selon Kitchin on ne devrait pas dire **`data`** mais **`capta`**.
+
+En français, on devrait parler non pas de **`données`** mais d'**`obtenues`** ([Bruno Latour, 1993](http://www.bruno-latour.fr/sites/default/files/53-BERLIN-PEDOFILpdf.pdf)).
+
+### Données quantitatives et qualitatives
+
+
+#### Données quantitatives : enregistrées sous forme de nombres
+
+
+- nominale (marié/célibataire/divorcé/veuf)
+- ordinale (faible, moyen, fort)
+- intervalles (température en degrés Celsius)
+- ratio (taille en cm) (le 0 a une valeur absolue)
+
+Il faudra adapter les outils de modélisation en fonction du type de données (voir [partie suivante](#jour-2-introduction-a-la-data-science)).
+
+
+#### Données qualitatives : non numérique => texte, image, vidéo, son, musique…
+
+Ces données pourront être "transformées" en données quantitatives, car sans passer par des chiffres on ne peut pas y appliquer la `data science`.
+
+Tout l'enjeu sera alors : *comment opérer cette transformation ?*
+
+
+- Exemples : 
+    *  Exemple de Facebook qui fait de la reconnaissance d'images à travers des algorithmes des machine learning
+    * Exemple du correcteur orthographique sur smartphone qui fonctionne avec une modélisation mathématique ["word2vec"](https://en.wikipedia.org/wiki/Word2vec).
+    * Exemple du [bot Twitter de Microsoft](http://www.numerama.com/pop-culture/154713-racisme-conspi-et-insultes-quand-le-bot-millenial-de-microsoft-derape-sur-twitter.html) qui est devenu raciste et fasciste en analysant les tweets d'autres utilisateurs. 
+
+<iframe src="//giphy.com/embed/kCk7YYBxkDcUo" width="240" height="167" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/nazis-kCk7YYBxkDcUo">via GIPHY</a></p>
+
+Dans le passage de qualitatif à quantitatif, il y aura forcément une perte de données.
+
+L'analyse qualitative ne perd néanmoins pas son importance pour appréhender les domaines artistiques (musique) ou sensoriels (goûts et odeurs) par exemple.
+
+### Données structurées et non structurées
+
+- **Structurées** : facilement lisibles par une machine (ex : `Base de données SQL`, `CSV`)
+- **Semi-structurées** : pas de modèle prédéfini, structure irrégulière et implicite, mais des données organisées et un nombre raisonnable de champs. (ex : `JSON`)
+- **Non structurées** : Généralement qualitatives, et nécessitant une restructuration avant d'être analysées ou combinées. (ex : `Base de données NoSQL`)
+
+Le machine learning est de plus en plus capable d'interpréter des données non structurées.
+
+### Données capturées et données échappées
+
+ *Brutes car non converties ou combinées*
+
+- **Données capturées** : observation, enquête, expérimentation, prise de notes, senseurs… => intention de générer des données
+- **Données échappées** : sous-produit d’un engin ou d’un système dont la fonction première est autre => Données générées "à côté" 
+- **Données transitoires** : échappées qui ne sont jamais examinées, transformées, combinées, ou analysées => Données crées mais pas utilisées
+
+### Données dérivées
+
+Résultat d’un traitement ou une analyse supplémentaire de données capturées. Souvent le résultat d’un modèle
+
+![Niveaux de données définis par la NASA](https://github.com/datactivist/formation_marseille/blob/master/img/nasa.jpg?raw=true)
+
+*Exemple des différents niveaux d'observation de la NASA*
+
+
+On travaille donc plus souvent sur des `données dérivées` que sur des `données brutes` (exemple : quand on corrige un texte pour éviter les répétitions).
+
+### Données primaires, secondaires et tertiaires
+
+> 1. **primaires** : générées par un chercheur dans un cadre expérimental
+> 2. **secondaires** : mises à disposition d’autrui pour être réutilisées
+> 3. **tertiaires** : données dérivées : décomptes, catégories, résultats statistiques
+
+
+Exemple : Recensement => pas diffusé comme données primaires et secondaires avant d'avoir passé le délai de communicabilité des archives.
+
+### Index, attributs, métadonnées
+
+- **Index** : permettent l’identification et la mise en relation. Essentiels pour enrichir les données. (exemple : l'importance d'un identifiant unique dans la combinaison de deux tables de données)
+- **Attributs** : représentent les aspects d’un phénomène, mais ne sont pas des index (pas identifiants uniques) (exemple : base de donnée des personne de cette salle, avec un identifiant unique, le nom, mais aussi des attributs, l'âge, qui ne sont pas forcément unique)
+- **Metadata** : données sur les données. Peuvent être descriptives, structurelles ou administratives. **Standard : [Dublin Core](https://openweb.eu.org/articles/dublin_core/).**
+
+
+### Bayésiens et fréquentistes
+
+Deux grandes écoles statistiques, deux grands paradigmes, qui s'affrontent : 
+
+*Exemple : Va-t-il fait beau demain ? Déterminisme ou croyances ?*
+
+#### Bayésiens 
+ 
+Tirent leur nom du révérend [Thomas Bayes](https://fr.wikipedia.org/wiki/Thomas_Bayes) 
+
+> Selon les bayésiens : la statistique porte sur les croyances à l’égard du monde, qu’on fait évoluer au regard des données collectées.
+
+#### Fréquentistes
+
+> Selon les fréquentistes : le monde existe indépendamment de nos interactions avec lui. Données issues d’un échantillon aléatoire, réplicable (fréquence). Expériences et tests statistiques : un énoncé est falsifié ou non falsifié.
+
+Exemple : Quelle est la taille moyenne des Français ?
+
+
+- Les fréquentistes diraient que le paramètre "taille moyenne" est fixe alors que les données seront aléatoires et infinies
+- Les bayésiens diraient qu'on ne peut pas faire un nombre infini de tirages aléatoires. Les données sont fixes et on cherche la distribution possible du paramètre recherché "taille moyenne" la plus probable en fonction des données. 
+
+## Le pipeline de données
+
+Le pipeline de données c'est un ensemble d'étapes de transformation récurrentes lors d'un de traitement de données
+
+
+[![Data pipeline](https://i.imgur.com/RlCRoKK.png)
+*Data pipeline de "School of Data"*](http://schoolofdata.org/2014/12/05/data-101-knowledge-sharing-with-publish-what-you-pay-indonesia/)
+
+### Trouver les données
+
+- Comment faites-vous ? 
+
+Réponses des participants : 
+
+    - acheter des données
+    - inciter les gens à en fabriquer, ne pas les garder pour eux
+    - fouiller dans ses données échapées
+    - faire appel à l'open data
+    - faire appel a des experts
+
+- Utiliser des dépôts internes
+- Faire appel aux CDO (Chief Data Officer)
+- Dépôts externes (ex : [data.gouv.fr](http://data.gouv.fr))
+
+### Acquérir les données
+
+Pose les questions essentielles : 
+
+- **Format** des données ? La majorité de formats sont propriétaires, empêchant donc le partage.
+- **Qualité** des données ? Rares sont ceux qui appliquent les bonnes pratiques
+- **Documentation** des données / métadonnées ? Souvent, les données échapées sont "ouvertes" mais la phase de mise en qualité et d'explication est baclée voir absente.
+- **Connecteurs** type ETL ou autres ? Les systêmes *Extract - Transform - Load* restent rares et ne sont pas accessibles à tous.
+- **Données “chaudes” ou données “froides” (stock/flux) ?** Les données varient-t-elles en permanence ou sont-elles stockées quelque part, inactives ?
+
+### Vérifier les données
+
+- **Sanity check** : vérifier que les données ont l'air crédibles ou cohérentes. Suppose une connaissance du secteur sur lequel on travaille. (La compétence de data scientist est donc indissociable des connaissance sur le domaine abordé)
+- comparer les données à un schéma théorique
+- **Tests qualité** (voir http://infolabs.io/qualite-donnees)
+
+La Fing a créé [un outil](http://infolabs.io/sprint-qualite) avec 117 types d'erreurs classiques, accompagnés des solutions pour les réparer.
+
+
+- *Attention*, les mauvaises données sont partout : [Guide des mauvaises données](https://github.com/Quartz/bad-data-guide)
+
+### Nettoyer les données
+
+> Tidy datasets are all alike, but every messy dataset is messy in its own way. 
+> – Hadley Wickham
+
+Paradigme du [tidy data](http://vita.had.co.nz/papers/tidy-data.pdf) d'Hadley Wickham : 
+
+> - chaque variable correspond à une colonne
+> - chaque observation/individu correspond à une ligne
+> - chaque type d’unité d’observation correspond à une table
+
+-  **chaque cellule contient donc une seule donnée**
+
+5 problèmes fréquents à résoudre pour parvenir au `tidy data` :
+
+1. les noms des colonnes sont des valeurs, pas des variables
+2. plusieurs variables dans une colonne
+3. les variables sont stockées à la fois dans les lignes et les colonnes
+4. plusieurs types dans une table
+5. un type dans plusieurs tables
+
+L'[exemple 1](https://github.com/datactivist/formation_marseille/blob/master/img/pewrow.png) et sa [solution](https://github.com/datactivist/formation_marseille/blob/master/img/pewlong.png)
+
+L'[exemple 2](https://github.com/datactivist/formation_marseille/blob/master/img/tbcol.png) et sa [solution](https://github.com/datactivist/formation_marseille/blob/master/img/tbtidy.png)
+
+L'[exemple 3](https://github.com/datactivist/formation_marseille/blob/master/img/weathermessy.png) et sa [solution](https://github.com/datactivist/formation_marseille/blob/master/img/wheathertidy.png)
+
+L'[exemple 4](https://github.com/datactivist/formation_marseille/blob/master/img/billboardmessy) et sa [solution](https://github.com/datactivist/formation_marseille/blob/master/img/billboardtidy)
+
+
+
+### Analyser les données
+
+- Calculer un indicateur (PIB, taux de chômage...)
+- Tabulation (croiser plusieurs attributs)
+- Modèles (rendre compte d'un attribut ou d'une variable par un certain nombre d'autres variables)
+- Machine learning
+- Faire des simulations
+
+On passe des **`données`** à **`l'information`** jusqu'au **`savoir`**, en espérant déboucher sur de **`l'action`**.
+
+### Présenter les résultats
+
+Les étapes du pipeline ne sont pas linéaires, c'est un **cycle non linéaire et itératif.**
+
+L'idée c'est de partager ses résultats tout en montrant la démarche. Capitaliser son travail, le partager avec d'autre, collaborer.
+Voir la [recherche reproductible](https://en.wikipedia.org/wiki/Reproducibility#Reproducible_research) ( utilisé en `python`, en `R`...)
+
+Différentes façons de présenter les résultats : 
+
+1. datavisualisation
+2. génération automatique de rapport (facile avec [`RMarkdown`](http://rmarkdown.rstudio.com/))
+3. applications interactives (facile avec [Shiny](https://shiny.rstudio.com/))
+
+La frontière entre ces trois types de présentation se réduit de plus en plus.
+
+On peut désormais laisser l'utilisateur final interagir avec la donnée, décider de ce qu'il va en faire (contrairement à l'époque papier où on était limité à une seule interprétation, imposée par l'auteur).
+
+## Open data, big data, linked data...
+
+### Open data
+
+L'**`open data`** émerge dans le sillage de l'**`open gouvernment`**.
+
+> la société a le droit de demander compte à tout agent public de son administration (art. 15 de la Déclaration des droits de l'homme et du citoyen)
+
+Aux Etats unis, le **FOIA** - *Freedom of Information Act* (1966) - permet à tout citoyen de réclamer toute information au gouvernement. 
+
+L'adaptation française est la **loi CADA** (1978) - *Commission d'accès aux documents administratifs* -  avec données personnelles exclues et surveillance de la **CNIL** - *commission nationale informatique et libertés*.
+
+L'Open data est souvent justifié par 3 arguments : 
+
+- **La transparence** : la responsabilité de l'État envers les citoyens l'engage à devenir transparent
+- **L'innovation** : l'open data est un potentiel économique énorme, c'est le "nouveau pétrole"
+("ouvrez les données, on saura leur donner de la valeur"). Voir a contrario [ce billet d'Henri Verdier](http://www.henriverdier.com/2013/03/non-les-donnees-ne-sont-pas-du-petrole.html)
+- **Levier de modernisation des entreprises** : créer de la transversalité, se mettre à la page du digital.
+
+L'Open data c'est : 
+
+- **des données publiques, généralement de gestion**. Les données publiques sont produites à des fins de gestion, et rarement conçues avec [data.gouv.fr](data.gouv.fr) en tête.  L'INSEE conçoit ses données dans un but de connaissance, ce qui rend la démarche plus facile.
+- **librement utilisables (licences)**. Pour toute personne, par avance, on accorde des permissions et on impose des restrictions (ex : Open licence, Creative Commons, MIT...).
+- **pas de redevance**. Normalement, on peut accéder aux données gratuitement. Il est admis que les données ne sont pas soumises à redevance, alors que la mise à disposition des données peut être facturée (prix de l'infrastructure matérielle). En utilisant la plupart des services, on ne paye pas, sauf quand on dépasse un seuil élevé de requêtes.
+
+
+**[L'Open definition](http://opendefinition.org/)** fait référence :
+
+> “Open means anyone can freely access, use, modify, and share for any purpose (subject, at most, to requirements that preserve provenance and openness).”
+> 
+> “Open data and content can be freely used, modified, and shared by anyone for any purpose”
+
+La clause **"share-alike"** est [conforme à l'Open Definition](http://blog.okfn.org/2010/06/24/why-share-alike-licenses-are-open-but-non-commercial-ones-arent/) : la modification ou l'enrichissement des données oblige l'utilisateur à re-partager les données une fois enrichies. 
+
+### Big data
+
+
+Le **`big data`** émerge dans le discours public vers **2007/2008** (mais occurrences anciennes) c'est à dire en même temps que l'**`opendata`**.
+
+Le big data est défini par la règle des *trois V* :
+
+> - **Volume**
+> - **Velocity**
+> - **Variety**
+
+Néanmoins, les cas où ces *trois V* sont présents de manière cumulatives sont assez rares.
+
+Sur l'aspect "volume", voir : http://ismydatabig.com
+
+Communément, il est admis que le big data ne peut pas se faire sur une machine de bureau classique.
+
+On a souvent du volume, mais il est plus rare de trouver vélocité et variété.
+
+La réponse à ces 3 éléments n'est pas forcément la même au niveau technologique (une solution à la variété différera d'une solution au volume).
+
+Kitchin ajoute les caractéristiques suivants : 
+
+- **exhaustivité** : on n'est plus sur un échantillon mais sur une population.
+- **résolution** : granularité fine, précision au niveau individuel.
+- **scalability** : capacité à changer d'échelle des technologies du big data.
+
+Le Big data utilise souvent le `NoSQL` (terme apparaît en 2009) : Données pas seulement structurées (exemple : Elastic Search).
+
+Le big data c'est aussi la promesse d'**efficience**, de **prédiction**, de **nouvelles formes de savoir**.
+
+Grâce au big data, on a des modèles [boite noire](https://fr.wikipedia.org/wiki/Bo%C3%AEte_noire_(syst%C3%A8me)) performants, mais souvent biaisés par des objectifs commerciaux. 
+
+(Exemple : Amazon crée un système de recommandation basé sur le seul indicateur du nombre de vente réussies.)
+
+Contrairement à l'`open data` , les données du `big data` sont généralement fermées et privées. 
+
+Ceci pose le problème de constitution de monopole dans l'économie des plateforme (Facebook, Twitter, Uber...). Si on ouvre ces données, les monopoles naturels sont cassés.
+
+> L'économie des plateformes repose sur la propriété des données.
+
+
+### Linked data
+
+[Poussées par Tim Berners-Lee](https://www.w3.org/DesignIssues/LinkedData.html), il s'agit de l'hyperlien de la donnée. On étend le concept d'**URL** ou **URI** aux bases de données.
+
+Les données seraient donc toutes potentiellement connectées entre elles.
+
+Voir http://linkeddata.org
+
+On parle aussi de **Web Sémantique**. Technologies principales : `SPARQL`, `RDF`.
+
+[WikiData](https://www.wikidata.org/wiki/Wikidata:Main_Page) est le projet le plus prometteur dans cette voie. Le but est d'adosser [Wikipédia](https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal) à une énorme base de donnée connectée. 
+(Exemple : Projet WikiData/ SPARQL - relation entre les intellectuels de la Grèce ancienne http://www.projetjourdain.org/network/index.html)
+
+### API
+
+- Application programming interface => un programme vu de la surface. L'[**API REST**](https://fr.wikipedia.org/wiki/Representational_state_transfer) est un standard très utilisé.
+- les machines parlent aux machines : on peut automatiser la communication inter-programme.
+- donnée dynamique => partage partiel (on partage nos données sans donner la base de donnée. On peut réguler le nombre de requêtes, l'accès à certaines fonctions).
+
+Un exemple : [overpass turbo](https://overpass-turbo.eu/) (permet de requêter OpenStreetMap)
+
+## Cadre juridique et protection de la vie privée
+
+### Cadre juridique de l'**`open data`**
+
+En France : 
+
+- [circulaire et vade mecum de 2013](https://www.etalab.gouv.fr/lepremierministreadresseaugouvernementlacirculairesurlouvertureetlepartagedesdonneespubliquesetlevade-mecumdelopendata)
+- lois **NOTRE** et **Lemaire** : principe de l'ouverture par défaut. Il faudra prouver qu'on a une bonne raison de ne pas partager ses données. Les données doivent être lisibles par les machines.
+- [**Licence ouverte**](https://www.etalab.gouv.fr/licence-ouverte-open-licence) : permet la réutilisation la plus large, y compris à titre commercial. En rajoutant de la valeur sur des données existantes, on a le droit de la commercialiser. Seule obligation : mentionner la source des données (clause BY).
+
+
+Des principes s'opposent à ce principe d'ouvertures : données nominatives, données personnelles, secrets prévus par la loi (défense, statistique, médical, commercial...)
+
+### Tout savoir sur l'**`open data`** au concret
+
+- [Guide Open Data France](http://www.opendatafrance.net/wp-content/uploads/2016/06/guideOD_communes_lois_juin2016_Web.pdf)
+- [Le rapport Trojette](http://www.modernisation.gouv.fr/laction-publique-se-transforme/en-ouvrant-les-donnees-publiques/remise-du-rapport-trojette-sur-louverture-des-donnees-publiques)
+- [Etat des lieux juridiques](https://www.cairn.info/revue-les-cahiers-du-numerique-2013-1-page-21.htm)
+
+

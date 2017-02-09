@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<title>Introduction au big data</title>
+
+<script src="bigdata_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="bigdata_files/bootstrap-3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+<script src="bigdata_files/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+<script src="bigdata_files/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="bigdata_files/navigation-1.1/tabsets.js"></script>
+<script src="bigdata_files/navigation-1.1/codefolding.js"></script>
+<link href="bigdata_files/magnific-popup-1.1.0/magnific-popup.css" rel="stylesheet" />
+<script src="bigdata_files/magnific-popup-1.1.0/jquery.magnific-popup.min.js"></script>
+<link href="bigdata_files/readthedown-0.1/readthedown.css" rel="stylesheet" />
+<script src="bigdata_files/readthedown-0.1/readthedown.js"></script>
+<link href="bigdata_files/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+
+<div id="content" data-toggle="wy-nav-shift">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+<nav id="nav-top" role="navigation" aria-label="top navigation">
+    <a role="button" href="#" data-toggle="wy-nav-top"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+</nav>
+
+
+<div id="header">
+<h1 class="title">Introduction au “big data”</h1>
+</div>
+
+
+<div id="table-of-contents">
+    <h2><a href="#content">Introduction au “big data”</a></h2>
+    <div id="text-table-of-contents">
+      <ul>
+      <li><a href="#jour-1-les-donnees"><span class="toc-section-number">1</span> Jour 1 : Les données</a><ul>
+      <li><a href="#echauffement"><span class="toc-section-number">1.1</span> Echauffement</a></li>
+      <li><a href="#objectifs-de-la-journee"><span class="toc-section-number">1.2</span> Objectifs de la journée</a></li>
+      <li><a href="#quest-ce-quune-donnee"><span class="toc-section-number">1.3</span> Qu’est-ce qu’une donnée ?</a></li>
+      <li><a href="#donnees-donnees-quelles-donnees"><span class="toc-section-number">1.4</span> Données, données… quelles données ?</a></li>
+      <li><a href="#le-pipeline-de-donnees"><span class="toc-section-number">1.5</span> Le pipeline de données</a></li>
+      <li><a href="#open-data-big-data-linked-data"><span class="toc-section-number">1.6</span> Open data, big data, linked data…</a></li>
+      <li><a href="#cadre-juridique-et-protection-de-la-vie-privee"><span class="toc-section-number">1.7</span> Cadre juridique et protection de la vie privée</a></li>
+      </ul></li>
+      </ul>
+    </div>
+</div>
+
+<div id="main">
+<p><strong>Retrouvez les fichiers de présentation <a href="https://github.com/datactivist/formation_marseille">ici</a></strong></p>
+<div id="jour-1-les-donnees" class="section level1">
+<h1><span class="header-section-number">1</span> Jour 1 : Les données</h1>
+<p>Voir <a href="./jour1.html">ici les slides</a></p>
+<div id="echauffement" class="section level2">
+<h2><span class="header-section-number">1.1</span> Echauffement</h2>
+<p>Jeu des <a href="http://infolabs.io/5-minutes-20-donnees"><em>5 minutes, 20 données</em></a></p>
+<blockquote>
+<p>Consigne =&gt; les participants doivent identifier 20 données dans leur environnement immédiat, en moins de 5 minutes</p>
+</blockquote>
+<p>Les différents types de données sont :</p>
+<ul>
+<li>comptées <code>(nombre d'hommes, de femmes ...)</code></li>
+<li>mesurées <code>(température, humidité)</code></li>
+<li>statuts <code>(allumé/éteint, ouvert/fermé)</code></li>
+<li>…</li>
+</ul>
+<p><strong>Conclusion</strong> : Ces données identifiées n’existent pas en tant que données, avant d’avoir été identifiées et formalisées.</p>
+</div>
+<div id="objectifs-de-la-journee" class="section level2">
+<h2><span class="header-section-number">1.2</span> Objectifs de la journée</h2>
+<ul>
+<li>Comprendre ce qu’est une donnée</li>
+<li>Appréhender la variété des types de données existantes</li>
+<li>Comprendre le data pipeline</li>
+<li>Appréhender les enjeux politiques et juridiques attachés aux données</li>
+</ul>
+</div>
+<div id="quest-ce-quune-donnee" class="section level2">
+<h2><span class="header-section-number">1.3</span> Qu’est-ce qu’une donnée ?</h2>
+<div id="definition" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Définition</h3>
+<p>Pour comprendre les origines de la donnée, il faut s’intéresser à la sociologie historique de la quantification, avec notamment les ouvrages d’Alain Desrosières :</p>
+<ul>
+<li><a href="https://www.cairn.info/la-politique-des-grands-nombres--9782707165046.htm">La politique des grands nombres</a></li>
+<li><a href="http://books.openedition.org/pressesmines/901?lang=fr">Pour une sociologie historique de la quantification</a></li>
+</ul>
+<p>Dès le départ, Alain Desrosières prend en compte les deux sens de la statistique : la <strong>discipline scientifique</strong> et le fait de faire de la <strong>quantification</strong> au service de l’exercice du pouvoir d’État (ex : INSEE).</p>
+<p>La statistique est à la fois :</p>
+<ul>
+<li>outil de gouvernement (<em>Statistik</em> - 18e siècle)</li>
+<li>outil de preuve (<em>statistics</em> - 19e siècle)</li>
+</ul>
+<blockquote>
+<p>Quantifier, c’est convenir puis mesurer.</p>
+</blockquote>
+<p>Il faut d’abord convenir d’un étalon, d’une unité de mesure avant de mesurer.</p>
+<p>De même pour comparer des statuts sociaux, il faut une nomenclature commune. Dans ce cas, ça ne répond pas à des lois physiques ou naturelles, c’est souvent le résultat de conventions, luttes et débats.</p>
+<p>Exemple :</p>
+<ul>
+<li>Le cas de la mesure du chômage, qui pourrait naïvement donner l’impression de se mesurer comme on mesure la température. Cette mesure est très controversée. Les politiques utilisent souvent une partie de la donnée (la catégorie A des chiffres de Pôle emploi).</li>
+</ul>
+</div>
+<div id="historique" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Historique</h3>
+<p>À l’époque où commence le New Deal puis après-guerre, l’État apprend à quantifier et comptabiliser. En France, l’INSEE apparait après la Libération.</p>
+<p>Aux sources de la mise en données du monde :</p>
+<ul>
+<li>Rencontre, dans la Californie des années 1960, entre la Nouvelle Gauche et les Nouveaux Communalistes (Hippies) sur fond de LSD et de recherche militaire (début de l’invention d’internet).</li>
+<li>L’inspiration de la cybernétique (N. Wiener) : objets techniques et êtres humains constituent un même système sociotechnique, régulé par l’information. Si l’information circule facilement, les conflits entre individus sont réduits.</li>
+<li>Exemple de Steward Brand, fondateur du Whole Earth Catalog puis de Wired =&gt; <a href="https://questionsdecommunication.revues.org/8619">“Forest Gump de l’Internet”</a> il défend l’émancipation individuelle grâce aux technologies. Ceci participera au mouvement des <strong>Hackers</strong> et donnera lieu à divers ateliers de bidouilles.</li>
+</ul>
+<div id="data-information-knowledge-wisdom" class="section level4">
+<h4><span class="header-section-number">1.3.2.1</span> Data-Information-Knowledge-Wisdom</h4>
+<p>Selon beaucoup, la circulation de l’information, la communication et la transparence permettront de résoudre les tensions sociales.</p>
+<div class="figure">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/06/DIKW_Pyramid.svg" />
+
+</div>
+<p>Selon l’auteur de cette Pyramide, <a href="http://en.wikipedia.org/wiki/Russell_L._Ackoff">Russell Ackoff</a>, les données peuvent être des :</p>
+<ol style="list-style-type: decimal">
+<li>faits</li>
+<li>signaux/stimulis</li>
+<li>symboles</li>
+</ol>
+</div>
+</div>
+<div id="etymologie" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Étymologie</h3>
+<p><code>Latin : dare (donner) &gt; datum (donné) &gt; data (donnés)</code></p>
+<p>Ce qui est évident, va de soi, est accepté <strong>sans discussion</strong></p>
+<p>Selon <a href="https://mitpress.mit.edu/books/raw-data-oxymoron">Rosenberg</a>, lorsque le terme “data” apparaît en anglais, au 17e siècle :</p>
+<blockquote>
+<ul>
+<li>Facts are ontological</li>
+<li>Evidence is epistemological</li>
+<li>Data is rhetorical</li>
+</ul>
+</blockquote>
+<ul>
+<li>Donc contrairement aux faits, une “donnée” à cette époque peut être fausse tout en restant une donnée</li>
+</ul>
+<div id="ambiguite-du-terme-data" class="section level4">
+<h4><span class="header-section-number">1.3.3.1</span> Ambiguïté du terme <code>data</code> :</h4>
+<p><code>Data</code> peut être un pluriel ou un singulier collectif.</p>
+<p>Usage du mot <code>data</code> dans le temps selon Google Ngram :</p>
+<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=data&amp;year_start=1600&amp;year_end=2000&amp;corpus=15&amp;smoothing=3&amp;share=&amp;direct_url=t1%3B%2Cdata%3B%2Cc0" width="100%" height="300" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">
+</iframe>
+<p>Usage du mot <code>données</code>selon Google Ngram :</p>
+<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=donn%C3%A9es&amp;year_start=1600&amp;year_end=2000&amp;corpus=19&amp;smoothing=3&amp;share=&amp;direct_url=t1%3B%2Cdonn%C3%A9es%3B%2Cc0" width="100%" height="300" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no">
+</iframe>
+<p>Le sens moderne apparaît à la fin du 18e siècle =&gt; renvoie à des expériences, des collectes d’éléments, une dimension empirique donc.</p>
+</div>
+<div id="raw-data-is-an-oxymoron" class="section level4">
+<h4><span class="header-section-number">1.3.3.2</span> “Raw data” is an oxymoron</h4>
+<p>Tiré du <a href="https://mitpress.mit.edu/books/raw-data-oxymoron">livre éponyme</a> :</p>
+<blockquote>
+<p>Data are always already “cooked” and never entirely “raw.”</p>
+</blockquote>
+<blockquote>
+<p>Data need to be imagined as data to exist and function as such, and the imagination of data entails an interpretative base.</p>
+</blockquote>
+<p>Comme mentionné dans <a href="#echauffement">l’échauffement</a>, les données existent une fois identifiées.</p>
+<p>Voir le <a href="https://www.ted.com/talks/tim_berners_lee_the_year_open_data_went_worldwide?language=fr">TED talk</a> sur l’open data de <a href="https://fr.wikipedia.org/wiki/Tim_Berners-Lee">Tim Berners Lee</a></p>
+<blockquote>
+<p>Il n’existe pas de données brutes, il y a toujours une phase d’interprétation, d’imagination.</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="donnees-donnees-quelles-donnees" class="section level2">
+<h2><span class="header-section-number">1.4</span> Données, données… quelles données ?</h2>
+<p><em>Basé sur le livre <a href="https://books.google.fr/books?hl=fr&amp;lr=&amp;id=GfOICwAAQBAJ&amp;oi=fnd&amp;pg=PP1&amp;dq=kitchin+data+revolution&amp;ots=pcyfMTZh-V&amp;sig=dQyPTL3AIN_4RdWvtBFw4VjdAa4#v=onepage&amp;q=kitchin%20data%20revolution&amp;f=false"><strong>“the data revolution”</strong></a> de Rob Kitchin</em></p>
+<blockquote>
+<p>Data are commonly understood to be the raw material produced by abstracting the world into categories, measures and other representational forms – numbers, characters, symbols, images, sounds, electromagnetic waves, bits – that constitute the building blocks from which information and knowledge are created.</p>
+</blockquote>
+<p>Il en déduit que l’enregistrabilité constitue la brique de base (“buildings blocks”)</p>
+<p>Selon Kitchin on ne devrait pas dire <strong><code>data</code></strong> mais <strong><code>capta</code></strong>.</p>
+<p>En français, on devrait parler non pas de <strong><code>données</code></strong> mais d’<strong><code>obtenues</code></strong> (<a href="http://www.bruno-latour.fr/sites/default/files/53-BERLIN-PEDOFILpdf.pdf">Bruno Latour, 1993</a>).</p>
+<div id="donnees-quantitatives-et-qualitatives" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Données quantitatives et qualitatives</h3>
+<div id="donnees-quantitatives-enregistrees-sous-forme-de-nombres" class="section level4">
+<h4><span class="header-section-number">1.4.1.1</span> Données quantitatives : enregistrées sous forme de nombres</h4>
+<ul>
+<li>nominale (marié/célibataire/divorcé/veuf)</li>
+<li>ordinale (faible, moyen, fort)</li>
+<li>intervalles (température en degrés Celsius)</li>
+<li>ratio (taille en cm) (le 0 a une valeur absolue)</li>
+</ul>
+<p>Il faudra adapter les outils de modélisation en fonction du type de données (voir <a href="#jour-2-introduction-a-la-data-science">partie suivante</a>).</p>
+</div>
+<div id="donnees-qualitatives-non-numerique-texte-image-video-son-musique" class="section level4">
+<h4><span class="header-section-number">1.4.1.2</span> Données qualitatives : non numérique =&gt; texte, image, vidéo, son, musique…</h4>
+<p>Ces données pourront être “transformées” en données quantitatives, car sans passer par des chiffres on ne peut pas y appliquer la <code>data science</code>.</p>
+<p>Tout l’enjeu sera alors : <em>comment opérer cette transformation ?</em></p>
+<ul>
+<li>Exemples :
+<ul>
+<li>Exemple de Facebook qui fait de la reconnaissance d’images à travers des algorithmes des machine learning</li>
+<li>Exemple du correcteur orthographique sur smartphone qui fonctionne avec une modélisation mathématique <a href="https://en.wikipedia.org/wiki/Word2vec">“word2vec”</a>.</li>
+<li>Exemple du <a href="http://www.numerama.com/pop-culture/154713-racisme-conspi-et-insultes-quand-le-bot-millenial-de-microsoft-derape-sur-twitter.html">bot Twitter de Microsoft</a> qui est devenu raciste et fasciste en analysant les tweets d’autres utilisateurs.</li>
+</ul></li>
+</ul>
+<iframe src="//giphy.com/embed/kCk7YYBxkDcUo" width="240" height="167" frameBorder="0" class="giphy-embed" allowFullScreen>
+</iframe>
+<p>
+<a href="http://giphy.com/gifs/nazis-kCk7YYBxkDcUo">via GIPHY</a>
+</p>
+<p>Dans le passage de qualitatif à quantitatif, il y aura forcément une perte de données.</p>
+<p>L’analyse qualitative ne perd néanmoins pas son importance pour appréhender les domaines artistiques (musique) ou sensoriels (goûts et odeurs) par exemple.</p>
+</div>
+</div>
+<div id="donnees-structurees-et-non-structurees" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Données structurées et non structurées</h3>
+<ul>
+<li><strong>Structurées</strong> : facilement lisibles par une machine (ex : <code>Base de données SQL</code>, <code>CSV</code>)</li>
+<li><strong>Semi-structurées</strong> : pas de modèle prédéfini, structure irrégulière et implicite, mais des données organisées et un nombre raisonnable de champs. (ex : <code>JSON</code>)</li>
+<li><strong>Non structurées</strong> : Généralement qualitatives, et nécessitant une restructuration avant d’être analysées ou combinées. (ex : <code>Base de données NoSQL</code>)</li>
+</ul>
+<p>Le machine learning est de plus en plus capable d’interpréter des données non structurées.</p>
+</div>
+<div id="donnees-capturees-et-donnees-echappees" class="section level3">
+<h3><span class="header-section-number">1.4.3</span> Données capturées et données échappées</h3>
+<p><em>Brutes car non converties ou combinées</em></p>
+<ul>
+<li><strong>Données capturées</strong> : observation, enquête, expérimentation, prise de notes, senseurs… =&gt; intention de générer des données</li>
+<li><strong>Données échappées</strong> : sous-produit d’un engin ou d’un système dont la fonction première est autre =&gt; Données générées “à côté”</li>
+<li><strong>Données transitoires</strong> : échappées qui ne sont jamais examinées, transformées, combinées, ou analysées =&gt; Données crées mais pas utilisées</li>
+</ul>
+</div>
+<div id="donnees-derivees" class="section level3">
+<h3><span class="header-section-number">1.4.4</span> Données dérivées</h3>
+<p>Résultat d’un traitement ou une analyse supplémentaire de données capturées. Souvent le résultat d’un modèle</p>
+<div class="figure">
+<img src="https://github.com/datactivist/formation_marseille/blob/master/img/nasa.jpg?raw=true" alt="Niveaux de données définis par la NASA" />
+<p class="caption">Niveaux de données définis par la NASA</p>
+</div>
+<p><em>Exemple des différents niveaux d’observation de la NASA</em></p>
+<p>On travaille donc plus souvent sur des <code>données dérivées</code> que sur des <code>données brutes</code> (exemple : quand on corrige un texte pour éviter les répétitions).</p>
+</div>
+<div id="donnees-primaires-secondaires-et-tertiaires" class="section level3">
+<h3><span class="header-section-number">1.4.5</span> Données primaires, secondaires et tertiaires</h3>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li><strong>primaires</strong> : générées par un chercheur dans un cadre expérimental</li>
+<li><strong>secondaires</strong> : mises à disposition d’autrui pour être réutilisées</li>
+<li><strong>tertiaires</strong> : données dérivées : décomptes, catégories, résultats statistiques</li>
+</ol>
+</blockquote>
+<p>Exemple : Recensement =&gt; pas diffusé comme données primaires et secondaires avant d’avoir passé le délai de communicabilité des archives.</p>
+</div>
+<div id="index-attributs-metadonnees" class="section level3">
+<h3><span class="header-section-number">1.4.6</span> Index, attributs, métadonnées</h3>
+<ul>
+<li><strong>Index</strong> : permettent l’identification et la mise en relation. Essentiels pour enrichir les données. (exemple : l’importance d’un identifiant unique dans la combinaison de deux tables de données)</li>
+<li><strong>Attributs</strong> : représentent les aspects d’un phénomène, mais ne sont pas des index (pas identifiants uniques) (exemple : base de donnée des personne de cette salle, avec un identifiant unique, le nom, mais aussi des attributs, l’âge, qui ne sont pas forcément unique)</li>
+<li><strong>Metadata</strong> : données sur les données. Peuvent être descriptives, structurelles ou administratives. <strong>Standard : <a href="https://openweb.eu.org/articles/dublin_core/">Dublin Core</a>.</strong></li>
+</ul>
+</div>
+<div id="bayesiens-et-frequentistes" class="section level3">
+<h3><span class="header-section-number">1.4.7</span> Bayésiens et fréquentistes</h3>
+<p>Deux grandes écoles statistiques, deux grands paradigmes, qui s’affrontent :</p>
+<p><em>Exemple : Va-t-il fait beau demain ? Déterminisme ou croyances ?</em></p>
+<div id="bayesiens" class="section level4">
+<h4><span class="header-section-number">1.4.7.1</span> Bayésiens</h4>
+<p>Tirent leur nom du révérend <a href="https://fr.wikipedia.org/wiki/Thomas_Bayes">Thomas Bayes</a></p>
+<blockquote>
+<p>Selon les bayésiens : la statistique porte sur les croyances à l’égard du monde, qu’on fait évoluer au regard des données collectées.</p>
+</blockquote>
+</div>
+<div id="frequentistes" class="section level4">
+<h4><span class="header-section-number">1.4.7.2</span> Fréquentistes</h4>
+<blockquote>
+<p>Selon les fréquentistes : le monde existe indépendamment de nos interactions avec lui. Données issues d’un échantillon aléatoire, réplicable (fréquence). Expériences et tests statistiques : un énoncé est falsifié ou non falsifié.</p>
+</blockquote>
+<p>Exemple : Quelle est la taille moyenne des Français ?</p>
+<ul>
+<li>Les fréquentistes diraient que le paramètre “taille moyenne” est fixe alors que les données seront aléatoires et infinies</li>
+<li>Les bayésiens diraient qu’on ne peut pas faire un nombre infini de tirages aléatoires. Les données sont fixes et on cherche la distribution possible du paramètre recherché “taille moyenne” la plus probable en fonction des données.</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="le-pipeline-de-donnees" class="section level2">
+<h2><span class="header-section-number">1.5</span> Le pipeline de données</h2>
+<p>Le pipeline de données c’est un ensemble d’étapes de transformation récurrentes lors d’un de traitement de données</p>
+<p><a href="http://schoolofdata.org/2014/12/05/data-101-knowledge-sharing-with-publish-what-you-pay-indonesia/"><img src="https://i.imgur.com/RlCRoKK.png" alt="Data pipeline" /> <em>Data pipeline de “School of Data”</em></a></p>
+<div id="trouver-les-donnees" class="section level3">
+<h3><span class="header-section-number">1.5.1</span> Trouver les données</h3>
+<ul>
+<li>Comment faites-vous ?</li>
+</ul>
+<p>Réponses des participants :</p>
+<pre><code>- acheter des données
+- inciter les gens à en fabriquer, ne pas les garder pour eux
+- fouiller dans ses données échapées
+- faire appel à l&#39;open data
+- faire appel a des experts</code></pre>
+<ul>
+<li>Utiliser des dépôts internes</li>
+<li>Faire appel aux CDO (Chief Data Officer)</li>
+<li>Dépôts externes (ex : <a href="http://data.gouv.fr">data.gouv.fr</a>)</li>
+</ul>
+</div>
+<div id="acquerir-les-donnees" class="section level3">
+<h3><span class="header-section-number">1.5.2</span> Acquérir les données</h3>
+<p>Pose les questions essentielles :</p>
+<ul>
+<li><strong>Format</strong> des données ? La majorité de formats sont propriétaires, empêchant donc le partage.</li>
+<li><strong>Qualité</strong> des données ? Rares sont ceux qui appliquent les bonnes pratiques</li>
+<li><strong>Documentation</strong> des données / métadonnées ? Souvent, les données échapées sont “ouvertes” mais la phase de mise en qualité et d’explication est baclée voir absente.</li>
+<li><strong>Connecteurs</strong> type ETL ou autres ? Les systêmes <em>Extract - Transform - Load</em> restent rares et ne sont pas accessibles à tous.</li>
+<li><strong>Données “chaudes” ou données “froides” (stock/flux) ?</strong> Les données varient-t-elles en permanence ou sont-elles stockées quelque part, inactives ?</li>
+</ul>
+</div>
+<div id="verifier-les-donnees" class="section level3">
+<h3><span class="header-section-number">1.5.3</span> Vérifier les données</h3>
+<ul>
+<li><strong>Sanity check</strong> : vérifier que les données ont l’air crédibles ou cohérentes. Suppose une connaissance du secteur sur lequel on travaille. (La compétence de data scientist est donc indissociable des connaissance sur le domaine abordé)</li>
+<li>comparer les données à un schéma théorique</li>
+<li><strong>Tests qualité</strong> (voir <a href="http://infolabs.io/qualite-donnees" class="uri">http://infolabs.io/qualite-donnees</a>)</li>
+</ul>
+<p>La Fing a créé <a href="http://infolabs.io/sprint-qualite">un outil</a> avec 117 types d’erreurs classiques, accompagnés des solutions pour les réparer.</p>
+<ul>
+<li><em>Attention</em>, les mauvaises données sont partout : <a href="https://github.com/Quartz/bad-data-guide">Guide des mauvaises données</a></li>
+</ul>
+</div>
+<div id="nettoyer-les-donnees" class="section level3">
+<h3><span class="header-section-number">1.5.4</span> Nettoyer les données</h3>
+<blockquote>
+<p>Tidy datasets are all alike, but every messy dataset is messy in its own way. – Hadley Wickham</p>
+</blockquote>
+<p>Paradigme du <a href="http://vita.had.co.nz/papers/tidy-data.pdf">tidy data</a> d’Hadley Wickham :</p>
+<blockquote>
+<ul>
+<li>chaque variable correspond à une colonne</li>
+<li>chaque observation/individu correspond à une ligne</li>
+<li>chaque type d’unité d’observation correspond à une table</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>chaque cellule contient donc une seule donnée</strong></li>
+</ul>
+<p>5 problèmes fréquents à résoudre pour parvenir au <code>tidy data</code> :</p>
+<ol style="list-style-type: decimal">
+<li>les noms des colonnes sont des valeurs, pas des variables</li>
+<li>plusieurs variables dans une colonne</li>
+<li>les variables sont stockées à la fois dans les lignes et les colonnes</li>
+<li>plusieurs types dans une table</li>
+<li>un type dans plusieurs tables</li>
+</ol>
+<p>L’<a href="https://github.com/datactivist/formation_marseille/blob/master/img/pewrow.png">exemple 1</a> et sa <a href="https://github.com/datactivist/formation_marseille/blob/master/img/pewlong.png">solution</a></p>
+<p>L’<a href="https://github.com/datactivist/formation_marseille/blob/master/img/tbcol.png">exemple 2</a> et sa <a href="https://github.com/datactivist/formation_marseille/blob/master/img/tbtidy.png">solution</a></p>
+<p>L’<a href="https://github.com/datactivist/formation_marseille/blob/master/img/weathermessy.png">exemple 3</a> et sa <a href="https://github.com/datactivist/formation_marseille/blob/master/img/wheathertidy.png">solution</a></p>
+<p>L’<a href="https://github.com/datactivist/formation_marseille/blob/master/img/billboardmessy">exemple 4</a> et sa <a href="https://github.com/datactivist/formation_marseille/blob/master/img/billboardtidy">solution</a></p>
+</div>
+<div id="analyser-les-donnees" class="section level3">
+<h3><span class="header-section-number">1.5.5</span> Analyser les données</h3>
+<ul>
+<li>Calculer un indicateur (PIB, taux de chômage…)</li>
+<li>Tabulation (croiser plusieurs attributs)</li>
+<li>Modèles (rendre compte d’un attribut ou d’une variable par un certain nombre d’autres variables)</li>
+<li>Machine learning</li>
+<li>Faire des simulations</li>
+</ul>
+<p>On passe des <strong><code>données</code></strong> à <strong><code>l'information</code></strong> jusqu’au <strong><code>savoir</code></strong>, en espérant déboucher sur de <strong><code>l'action</code></strong>.</p>
+</div>
+<div id="presenter-les-resultats" class="section level3">
+<h3><span class="header-section-number">1.5.6</span> Présenter les résultats</h3>
+<p>Les étapes du pipeline ne sont pas linéaires, c’est un <strong>cycle non linéaire et itératif.</strong></p>
+<p>L’idée c’est de partager ses résultats tout en montrant la démarche. Capitaliser son travail, le partager avec d’autre, collaborer. Voir la <a href="https://en.wikipedia.org/wiki/Reproducibility#Reproducible_research">recherche reproductible</a> ( utilisé en <code>python</code>, en <code>R</code>…)</p>
+<p>Différentes façons de présenter les résultats :</p>
+<ol style="list-style-type: decimal">
+<li>datavisualisation</li>
+<li>génération automatique de rapport (facile avec <a href="http://rmarkdown.rstudio.com/"><code>RMarkdown</code></a>)</li>
+<li>applications interactives (facile avec <a href="https://shiny.rstudio.com/">Shiny</a>)</li>
+</ol>
+<p>La frontière entre ces trois types de présentation se réduit de plus en plus.</p>
+<p>On peut désormais laisser l’utilisateur final interagir avec la donnée, décider de ce qu’il va en faire (contrairement à l’époque papier où on était limité à une seule interprétation, imposée par l’auteur).</p>
+</div>
+</div>
+<div id="open-data-big-data-linked-data" class="section level2">
+<h2><span class="header-section-number">1.6</span> Open data, big data, linked data…</h2>
+<div id="open-data" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> Open data</h3>
+<p>L’<strong><code>open data</code></strong> émerge dans le sillage de l’<strong><code>open gouvernment</code></strong>.</p>
+<blockquote>
+<p>la société a le droit de demander compte à tout agent public de son administration (art. 15 de la Déclaration des droits de l’homme et du citoyen)</p>
+</blockquote>
+<p>Aux Etats unis, le <strong>FOIA</strong> - <em>Freedom of Information Act</em> (1966) - permet à tout citoyen de réclamer toute information au gouvernement.</p>
+<p>L’adaptation française est la <strong>loi CADA</strong> (1978) - <em>Commission d’accès aux documents administratifs</em> - avec données personnelles exclues et surveillance de la <strong>CNIL</strong> - <em>commission nationale informatique et libertés</em>.</p>
+<p>L’Open data est souvent justifié par 3 arguments :</p>
+<ul>
+<li><strong>La transparence</strong> : la responsabilité de l’État envers les citoyens l’engage à devenir transparent</li>
+<li><strong>L’innovation</strong> : l’open data est un potentiel économique énorme, c’est le “nouveau pétrole” (“ouvrez les données, on saura leur donner de la valeur”). Voir a contrario <a href="http://www.henriverdier.com/2013/03/non-les-donnees-ne-sont-pas-du-petrole.html">ce billet d’Henri Verdier</a></li>
+<li><strong>Levier de modernisation des entreprises</strong> : créer de la transversalité, se mettre à la page du digital.</li>
+</ul>
+<p>L’Open data c’est :</p>
+<ul>
+<li><strong>des données publiques, généralement de gestion</strong>. Les données publiques sont produites à des fins de gestion, et rarement conçues avec <a href="data.gouv.fr" class="uri">data.gouv.fr</a> en tête. L’INSEE conçoit ses données dans un but de connaissance, ce qui rend la démarche plus facile.</li>
+<li><strong>librement utilisables (licences)</strong>. Pour toute personne, par avance, on accorde des permissions et on impose des restrictions (ex : Open licence, Creative Commons, MIT…).</li>
+<li><strong>pas de redevance</strong>. Normalement, on peut accéder aux données gratuitement. Il est admis que les données ne sont pas soumises à redevance, alors que la mise à disposition des données peut être facturée (prix de l’infrastructure matérielle). En utilisant la plupart des services, on ne paye pas, sauf quand on dépasse un seuil élevé de requêtes.</li>
+</ul>
+<p><strong><a href="http://opendefinition.org/">L’Open definition</a></strong> fait référence :</p>
+<blockquote>
+<p>“Open means anyone can freely access, use, modify, and share for any purpose (subject, at most, to requirements that preserve provenance and openness).”</p>
+<p>“Open data and content can be freely used, modified, and shared by anyone for any purpose”</p>
+</blockquote>
+<p>La clause <strong>“share-alike”</strong> est <a href="http://blog.okfn.org/2010/06/24/why-share-alike-licenses-are-open-but-non-commercial-ones-arent/">conforme à l’Open Definition</a> : la modification ou l’enrichissement des données oblige l’utilisateur à re-partager les données une fois enrichies.</p>
+</div>
+<div id="big-data" class="section level3">
+<h3><span class="header-section-number">1.6.2</span> Big data</h3>
+<p>Le <strong><code>big data</code></strong> émerge dans le discours public vers <strong>2007/2008</strong> (mais occurrences anciennes) c’est à dire en même temps que l’<strong><code>opendata</code></strong>.</p>
+<p>Le big data est défini par la règle des <em>trois V</em> :</p>
+<blockquote>
+<ul>
+<li><strong>Volume</strong></li>
+<li><strong>Velocity</strong></li>
+<li><strong>Variety</strong></li>
+</ul>
+</blockquote>
+<p>Néanmoins, les cas où ces <em>trois V</em> sont présents de manière cumulatives sont assez rares.</p>
+<p>Sur l’aspect “volume”, voir : <a href="http://ismydatabig.com" class="uri">http://ismydatabig.com</a></p>
+<p>Communément, il est admis que le big data ne peut pas se faire sur une machine de bureau classique.</p>
+<p>On a souvent du volume, mais il est plus rare de trouver vélocité et variété.</p>
+<p>La réponse à ces 3 éléments n’est pas forcément la même au niveau technologique (une solution à la variété différera d’une solution au volume).</p>
+<p>Kitchin ajoute les caractéristiques suivants :</p>
+<ul>
+<li><strong>exhaustivité</strong> : on n’est plus sur un échantillon mais sur une population.</li>
+<li><strong>résolution</strong> : granularité fine, précision au niveau individuel.</li>
+<li><strong>scalability</strong> : capacité à changer d’échelle des technologies du big data.</li>
+</ul>
+<p>Le Big data utilise souvent le <code>NoSQL</code> (terme apparaît en 2009) : Données pas seulement structurées (exemple : Elastic Search).</p>
+<p>Le big data c’est aussi la promesse d’<strong>efficience</strong>, de <strong>prédiction</strong>, de <strong>nouvelles formes de savoir</strong>.</p>
+<p>Grâce au big data, on a des modèles <a href="https://fr.wikipedia.org/wiki/Bo%C3%AEte_noire_(syst%C3%A8me)">boite noire</a> performants, mais souvent biaisés par des objectifs commerciaux.</p>
+<p>(Exemple : Amazon crée un système de recommandation basé sur le seul indicateur du nombre de vente réussies.)</p>
+<p>Contrairement à l’<code>open data</code> , les données du <code>big data</code> sont généralement fermées et privées.</p>
+<p>Ceci pose le problème de constitution de monopole dans l’économie des plateforme (Facebook, Twitter, Uber…). Si on ouvre ces données, les monopoles naturels sont cassés.</p>
+<blockquote>
+<p>L’économie des plateformes repose sur la propriété des données.</p>
+</blockquote>
+</div>
+<div id="linked-data" class="section level3">
+<h3><span class="header-section-number">1.6.3</span> Linked data</h3>
+<p><a href="https://www.w3.org/DesignIssues/LinkedData.html">Poussées par Tim Berners-Lee</a>, il s’agit de l’hyperlien de la donnée. On étend le concept d’<strong>URL</strong> ou <strong>URI</strong> aux bases de données.</p>
+<p>Les données seraient donc toutes potentiellement connectées entre elles.</p>
+<p>Voir <a href="http://linkeddata.org" class="uri">http://linkeddata.org</a></p>
+<p>On parle aussi de <strong>Web Sémantique</strong>. Technologies principales : <code>SPARQL</code>, <code>RDF</code>.</p>
+<p><a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">WikiData</a> est le projet le plus prometteur dans cette voie. Le but est d’adosser <a href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal">Wikipédia</a> à une énorme base de donnée connectée. (Exemple : Projet WikiData/ SPARQL - relation entre les intellectuels de la Grèce ancienne <a href="http://www.projetjourdain.org/network/index.html" class="uri">http://www.projetjourdain.org/network/index.html</a>)</p>
+</div>
+<div id="api" class="section level3">
+<h3><span class="header-section-number">1.6.4</span> API</h3>
+<ul>
+<li>Application programming interface =&gt; un programme vu de la surface. L’<a href="https://fr.wikipedia.org/wiki/Representational_state_transfer"><strong>API REST</strong></a> est un standard très utilisé.</li>
+<li>les machines parlent aux machines : on peut automatiser la communication inter-programme.</li>
+<li>donnée dynamique =&gt; partage partiel (on partage nos données sans donner la base de donnée. On peut réguler le nombre de requêtes, l’accès à certaines fonctions).</li>
+</ul>
+<p>Un exemple : <a href="https://overpass-turbo.eu/">overpass turbo</a> (permet de requêter OpenStreetMap)</p>
+</div>
+</div>
+<div id="cadre-juridique-et-protection-de-la-vie-privee" class="section level2">
+<h2><span class="header-section-number">1.7</span> Cadre juridique et protection de la vie privée</h2>
+<div id="cadre-juridique-de-lopen-data" class="section level3">
+<h3><span class="header-section-number">1.7.1</span> Cadre juridique de l’<strong><code>open data</code></strong></h3>
+<p>En France :</p>
+<ul>
+<li><a href="https://www.etalab.gouv.fr/lepremierministreadresseaugouvernementlacirculairesurlouvertureetlepartagedesdonneespubliquesetlevade-mecumdelopendata">circulaire et vade mecum de 2013</a></li>
+<li>lois <strong>NOTRE</strong> et <strong>Lemaire</strong> : principe de l’ouverture par défaut. Il faudra prouver qu’on a une bonne raison de ne pas partager ses données. Les données doivent être lisibles par les machines.</li>
+<li><a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence"><strong>Licence ouverte</strong></a> : permet la réutilisation la plus large, y compris à titre commercial. En rajoutant de la valeur sur des données existantes, on a le droit de la commercialiser. Seule obligation : mentionner la source des données (clause BY).</li>
+</ul>
+<p>Des principes s’opposent à ce principe d’ouvertures : données nominatives, données personnelles, secrets prévus par la loi (défense, statistique, médical, commercial…)</p>
+</div>
+<div id="tout-savoir-sur-lopen-data-au-concret" class="section level3">
+<h3><span class="header-section-number">1.7.2</span> Tout savoir sur l’<strong><code>open data</code></strong> au concret</h3>
+<ul>
+<li><a href="http://www.opendatafrance.net/wp-content/uploads/2016/06/guideOD_communes_lois_juin2016_Web.pdf">Guide Open Data France</a></li>
+<li><a href="http://www.modernisation.gouv.fr/laction-publique-se-transforme/en-ouvrant-les-donnees-publiques/remise-du-rapport-trojette-sur-louverture-des-donnees-publiques">Le rapport Trojette</a></li>
+<li><a href="https://www.cairn.info/revue-les-cahiers-du-numerique-2013-1-page-21.htm">Etat des lieux juridiques</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+
+<div id="postamble" data-toggle="wy-nav-shift" class="status">
+<p class="date"><span class="glyphicon glyphicon-calendar"></span> Janvier 2017</p>
+</div>
+
+
+<script>
+$(document).ready(function () {
+ 	    $('#content img')
+ 	  .addClass("image-lb");
+  $('#content').magnificPopup({
+	      type:'image',
+	      closeOnContentClick: false,
+	      delegate: 'img',
+	      gallery: {enabled: false },
+	      image: {
+	        verticalFit: true,
+          titleSrc: 'alt'
+	      }
+ 	    });
+ 	});
+</script>
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
