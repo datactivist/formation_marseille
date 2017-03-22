@@ -34,6 +34,11 @@ background-position: 50% 50%
 
 .right[.footnote[<a href='https://commons.wikimedia.org/wiki/File%3ASeurat-Gravelines-Annonciade.jpg'>source</a>]]
 
+
+???
+
+Samuel
+
 ---
 class: center, middle
 
@@ -234,6 +239,11 @@ Ex : recensement => pas diffusé comme données primaires et secondaires avant c
 class: inverse, center, middle
 # Le pipeline de données
 
+
+???
+
+Joël
+
 ---
 ## Le pipeline de données
 
@@ -335,6 +345,11 @@ Voir https://www.cairn.info/revue-informations-sociales-2015-5-page-26.htm
 - 1966 : FOIA
 
 - 1978 : CADA (données personnelles exclues, CNIL)
+
+
+???
+
+Samuel
 
 ---
 ## Open data
