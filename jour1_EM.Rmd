@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Initiation au big dataÉtat-major de la DINSI</title>
-    <meta charset="utf-8">
-    <meta name="author" content="Ville de Marseille et datactivi.st" />
-    <link href="libs/remark-css/example.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/xaringan.css" type="text/css" />
-  </head>
-  <body>
-    <textarea id="source">
+---
+title: "Initiation au big data</BR>État-major de la DINSI"
+author: Ville de Marseille et datactivi.st
+output:
+  xaringan::moon_reader:
+    css: [default, assets/xaringan.css]
+    seal: FALSE
+    chakra: libs/remark-latest.min.js
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
 
-
-
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(cache = TRUE)
+```
 
 class: center, middle
 background-image: url(./img/seurat.jpg)
@@ -21,20 +26,20 @@ background-position: 50% 50%
 # Introduction au big data
 ## Datactivist
 
-&lt;/BR&gt;
-&lt;/BR&gt;
+</BR>
+</BR>
 
 ### Samuel Goëta et Joël Gombin
 
-.right[.footnote[&lt;a href='https://commons.wikimedia.org/wiki/File%3ASeurat-Gravelines-Annonciade.jpg'&gt;source&lt;/a&gt;]]
+.right[.footnote[<a href='https://commons.wikimedia.org/wiki/File%3ASeurat-Gravelines-Annonciade.jpg'>source</a>]]
 
 ---
 class: center, middle
 
 Retrouvez les matériaux sur https://github.com/datactivist/formation_marseille 
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;p&gt;&lt;/p&gt;
+
+Ces slides en ligne : www.datactivi.st/formation_marseille/jour1_EM.html
+
 Pad collaboratif : https://frama.link/bigdata_marseille_EM
 
 ---
@@ -72,7 +77,7 @@ D'après vous ?
 
 - L'inspiration de la cybernétique (N. Wiener) : objets techniques et êtres humains constituent un même système sociotechhnique, régulé par l'information
 
-- Exemple de Steward Brand, fondateur du _Whole Earth Catalog_ puis de Wired =&gt; ["Forest Gump de l'Internet"](https://questionsdecommunication.revues.org/8619)
+- Exemple de Steward Brand, fondateur du _Whole Earth Catalog_ puis de Wired => ["Forest Gump de l'Internet"](https://questionsdecommunication.revues.org/8619)
 
 ---
 ## Aux sources de la mise en données du monde
@@ -82,11 +87,11 @@ D'après vous ?
 ---
 ## Etymologie
 
-Latin : _dare_ (donner) &gt; _datum_ (donné) &gt; _data_ (donnés)
+Latin : _dare_ (donner) > _datum_ (donné) > _data_ (donnés)
 
 Ce qui est évident, va de soi, est accepté sans discussion
 
-&gt; Facts are ontological, evidence is epistemological, data
+> Facts are ontological, evidence is epistemological, data
 is rhetorical. A datum may also be a fact, just as a fact may be evidence. But, from its
 first vernacular formulation, the existence of a datum has been independent of any
 consideration of corresponding ontological truth. When a fact is proven false, it ceases
@@ -97,9 +102,9 @@ to be a fact. False data is data nonetheless.
 ---
 ## Usage de "data"
 
-Le sens moderne apparaît à la fin du 18e siècle =&gt; renvoie à des expériences, des collectes d'éléments. 
+Le sens moderne apparaît à la fin du 18e siècle => renvoie à des expériences, des collectes d'éléments. 
 
-&lt;iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=donn%C3%A9es&amp;year_start=1600&amp;year_end=2000&amp;corpus=19&amp;smoothing=3&amp;share=&amp;direct_url=t1%3B%2Cdonn%C3%A9es%3B%2Cc0" width=100% height=600 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no&gt;&lt;/iframe&gt;
+<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=donn%C3%A9es&year_start=1600&year_end=2000&corpus=19&smoothing=3&share=&direct_url=t1%3B%2Cdonn%C3%A9es%3B%2Cc0" width=100% height=600 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>
 
 ---
 ## Données, données... quelles données ?
@@ -109,23 +114,23 @@ Le sens moderne apparaît à la fin du 18e siècle =&gt; renvoie à des expérie
 ---
 ## Données, données... quelles données ?
 
-&gt; Data are commonly understood to be the raw material produced by abstracting the world into
+> Data are commonly understood to be the raw material produced by abstracting the world into
 categories, measures and other representational forms – numbers, characters, symbols, images,
 sounds, electromagnetic waves, bits – that constitute the building blocks from which information and knowledge are created. 
 
-=&gt; enregistrabilité
-=&gt; briques de base ("buildings blocks")
+=> enregistrabilité
+=> briques de base ("buildings blocks")
 
 ---
 ## Données, données... quelles données ?
 
-&gt; While many analysts may accept data at face value, and treat them as if they are neutral, objective, and pre-analytic in nature, data are in fact framed technically, economically, ethically, temporally, spatially and philosophically.
+> While many analysts may accept data at face value, and treat them as if they are neutral, objective, and pre-analytic in nature, data are in fact framed technically, economically, ethically, temporally, spatially and philosophically.
 
-&gt; Technically, then, what we understand as data are actually capta (derived from the Latin capere, meaning ‘to take’); those units of data that have been selected and harvested from the sum of all potential data.
+> Technically, then, what we understand as data are actually capta (derived from the Latin capere, meaning ‘to take’); those units of data that have been selected and harvested from the sum of all potential data.
 
-[[Source]](https://books.google.fr/books?hl=fr&amp;lr=&amp;id=GfOICwAAQBAJ&amp;oi=fnd&amp;pg=PP1&amp;dq=kitchin+data+revolution&amp;ots=pcyfMTZh-V&amp;sig=dQyPTL3AIN_4RdWvtBFw4VjdAa4#v=onepage&amp;q=kitchin%20data%20revolution&amp;f=false)
+[[Source]](https://books.google.fr/books?hl=fr&lr=&id=GfOICwAAQBAJ&oi=fnd&pg=PP1&dq=kitchin+data+revolution&ots=pcyfMTZh-V&sig=dQyPTL3AIN_4RdWvtBFw4VjdAa4#v=onepage&q=kitchin%20data%20revolution&f=false)
 
-&gt; « Décidément, on ne devrait jamais parler de “données”, mais toujours d’“obtenues”. » - Bruno Latour, 1993
+> « Décidément, on ne devrait jamais parler de “données”, mais toujours d’“obtenues”. » - Bruno Latour, 1993
 
 ---
 ## Données quantitatives et qualitatives
@@ -143,7 +148,7 @@ sounds, electromagnetic waves, bits – that constitute the building blocks from
 ---
 ## Données quantitatives et qualitatives
 
-- Données qualitatives : non numérique =&gt; texte, image, vidéo, son, musique...
+- Données qualitatives : non numérique => texte, image, vidéo, son, musique...
 
   + peut être convertie en données quantitatives
 
@@ -188,13 +193,13 @@ Données non structurées : pas de structure commune identifiable
 ---
 ## Données capturées et données échappées
 
-- Données capturées : observation, enquête, expérimentation, prise de notes, senseurs... =&gt; intention de générer des données
+- Données capturées : observation, enquête, expérimentation, prise de notes, senseurs... => intention de générer des données
 
 - Données échappées : sous-produit d'un engin ou d'un système dont la fonction première est autre
 
 - Données transitoires : échappées qui ne sont jamais examinées, transformées ou analysées
 
-=&gt; brutes car non converties ou combinées
+=> brutes car non converties ou combinées
 
 ---
 ## Données dérivées
@@ -217,7 +222,7 @@ Données non structurées : pas de structure commune identifiable
 
 - tertiaires : données dérivées : décomptes, catégories, résultats statistiques
 
-Ex : recensement =&gt; pas diffusé comme données primaires et secondaires avant communicabilité des archives, diffusé comme données tertiaires
+Ex : recensement => pas diffusé comme données primaires et secondaires avant communicabilité des archives, diffusé comme données tertiaires
 
 ---
 ## Index, attributs, métadonnées
@@ -276,9 +281,9 @@ class: inverse, center, middle
 
 - paradigme du [_tidy data_](http://vita.had.co.nz/papers/tidy-data.pdf) (Hadley Wickham)
 
-&gt; “Happy families are all alike; every unhappy family is unhappy in its own way.” – Leon Tolstoï 
+> “Happy families are all alike; every unhappy family is unhappy in its own way.” – Leon Tolstoï 
 
-&gt; “Tidy datasets are all alike, but every messy dataset is messy in its own way.” – Hadley Wickham
+> “Tidy datasets are all alike, but every messy dataset is messy in its own way.” – Hadley Wickham
 
 ---
 ## Nettoyer les données
@@ -382,14 +387,14 @@ Justifications :
 
 - RDF / SPARQL
 
-- wikidata =&gt; http://histropedia.com/timeline/r7bwtpg9bg0t/Olympique-de-Marseille
+- wikidata => http://histropedia.com/timeline/r7bwtpg9bg0t/Olympique-de-Marseille
 
 ---
 ## API
 
-- Application programming interface =&gt; un programme vu de la surface
+- Application programming interface => un programme vu de la surface
 - les machines parlent aux machines
-- donnée dynamique =&gt; partage partiel
+- donnée dynamique => partage partiel
 - un exemple : [overpass turbo](https://overpass-turbo.eu/)
 
 ---
@@ -401,32 +406,3 @@ https://frama.link/eval_mrs
 ---
 class: inverse, center, middle
 Merci !
-    </textarea>
-<script src="libs/remark-latest.min.js"></script>
-<script>var slideshow = remark.create({
-"highlightStyle": "github",
-"highlightLines": true,
-"countIncrementalSlides": false
-});
-if (window.HTMLWidgets) slideshow.on('showSlide', function (slide) {setTimeout(function() {window.dispatchEvent(new Event('resize'));}, 100)});</script>
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-  }
-});
-</script>
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-(function () {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src  = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
-    script.src  = script.src.replace(/^https?:/, '');
-  document.getElementsByTagName('head')[0].appendChild(script);
-})();
-</script>
-  </body>
-</html>
