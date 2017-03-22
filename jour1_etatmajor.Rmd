@@ -3,6 +3,7 @@ title: "Initiation au big data</BR>État-major de la DINSI"
 author: Ville de Marseille et datactivi.st
 output:
   xaringan::moon_reader:
+    css: [default, assets/xaringan.css]
     seal: FALSE
     chakra: libs/remark-latest.min.js
     lib_dir: libs
@@ -45,80 +46,45 @@ Pad collaboratif : https://frama.link/bigdata_marseille_EM
 ## 5 minutes, 20 données
 
 - vous avez 5 minutes
+
 - vous devez trouver 20 données dans notre environnement immédiat
+
 - pas de recours aux écrans !
 
 - [[source]](http://infolabs.io/5-minutes-20-donnees)
 
-# Objectifs de la journée
-
+---
 ## Objectifs de la journée
 
 - Comprendre ce qu'est une donnée
+
 - Appréhender la variété des types de données existantes
+
 - Comprendre le data pipeline
+
 - Appréhender les enjeux politiques et juridiques attachés aux données
 
+---
+class: inverse, center, middle
 # Qu'est-ce qu'une donnée ?
-
-## Qu'est-ce qu'une donnée ?
 
 D'après vous ?
 
-## Sociologie historique de la quantification
-
-![center](./img/desrosieres1.jpg)
-
-## Sociologie historique de la quantification
-
-![center](./img/desrosieres2.jpg)
-
-## Sociologie historique de la quantification
-
-La statistique est à la fois :
-
-  + outil de gouvernement (_Statistik_ - 18e siècle), et
-  + outil de preuve (_statistics_ - 19e siècle)
-  
-## Sociologie historique de la quantification
-
-> [Quantifier, c'est convenir puis mesurer](http://www.pressesdesmines.com/media/extrait/PourSocioHistExtr.pdf)
-
-> Le verbe quantifier est employé ici dans un sens large : exprimer et
-faire exister sous une forme numérique ce qui, auparavant, était exprimé par
-des mots et non par des nombres. En revanche, l’idée de mesure, inspirée de
-l’épistémologie traditionnelle des sciences de la nature, implique que quelque
-chose existe sous une forme déjà mesurable selon une métrologie réaliste,
-comme la hauteur de la Tour Eiffel. 
-
-## Sociologie historique de la quantification
-
-New Deal puis après-guerre : apogée de l'État keynésien => macro-économie
-
+---
 ## Aux sources de la mise en données du monde
 
 - Rencontre, dans la Californie des années 1960, entre la Nouvelle Gauche et les Nouveaux Communalistes sur fond de LSD et de recherche militaire
+
 - L'inspiration de la cybernétique (N. Wiener) : objets techniques et êtres humains constituent un même système sociotechhnique, régulé par l'information
+
 - Exemple de Steward Brand, fondateur du _Whole Earth Catalog_ puis de Wired => ["Forest Gump de l'Internet"](https://questionsdecommunication.revues.org/8619)
 
+---
 ## Aux sources de la mise en données du monde
 
-![hauteur](./img/wholeearthcatalog.jpg)
+.reduite[.center[![](./img/wholeearthcatalog.jpg)]]
 
-## La pyramide Data-Information-Knowledge-Wisdom
-
-[![largeur](./img/DIKW_Pyramid.svg)](https://commons.wikimedia.org/w/index.php?curid=37705247)
-
-## La pyramide Data-Information-Knowledge-Wisdom
-
-Attribuée à [Russell Ackoff](http://en.wikipedia.org/wiki/Russell_L._Ackoff), 1989
-
-Les données peuvent être des :
-
-- faits
-- signal/stimulis
-- symboles
-
+---
 ## Etymologie
 
 Latin : _dare_ (donner) > _datum_ (donné) > _data_ (donnés)
@@ -133,39 +99,19 @@ to be a fact. False data is data nonetheless.
 
 [Rosenberg, 2013](https://mitpress.mit.edu/books/raw-data-oxymoron)
 
-## Etymologie
-
-Ambiguïté en anglais de "data" qui peut être un pluriel ou un singulier collectif.
-
-> Whether in mathematics, theology, or another field, use of the term “data” emphasized the argumentative context as well as the idea of problem-solving by bringing into relationship things known and things unknown
-
-## Usage de "data"
-
-<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=data&year_start=1600&year_end=2000&corpus=15&smoothing=3&share=&direct_url=t1%3B%2Cdata%3B%2Cc0" width=100% height=600 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>
-
-## Usage de "données"
-
-<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=donn%C3%A9es&year_start=1600&year_end=2000&corpus=19&smoothing=3&share=&direct_url=t1%3B%2Cdonn%C3%A9es%3B%2Cc0" width=100% height=600 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>
-
+---
 ## Usage de "data"
 
 Le sens moderne apparaît à la fin du 18e siècle => renvoie à des expériences, des collectes d'éléments. 
 
-## "Raw data" is an oxymoron
+<iframe name="ngram_chart" src="https://books.google.com/ngrams/interactive_chart?content=donn%C3%A9es&year_start=1600&year_end=2000&corpus=19&smoothing=3&share=&direct_url=t1%3B%2Cdonn%C3%A9es%3B%2Cc0" width=100% height=600 marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no></iframe>
 
-> Data are always already “cooked” and never entirely “raw.”
-
-> Data need to be imagined _as_ data to exist and function as such, and the imagination of data entails an interpretive base.
-
-[[Source]](https://mitpress.mit.edu/books/raw-data-oxymoron)
-
-
-# Données, données... quelles données ?
-
+---
 ## Données, données... quelles données ?
 
-[![hauteur](./img/kitchin.jpg)](https://books.google.fr/books?hl=fr&lr=&id=GfOICwAAQBAJ&oi=fnd&pg=PP1&dq=kitchin+data+revolution&ots=pcyfMTZh-V&sig=dQyPTL3AIN_4RdWvtBFw4VjdAa4#v=onepage&q=kitchin%20data%20revolution&f=false)
+.reduite[.center[![](./img/kitchin.jpg)]]
 
+---
 ## Données, données... quelles données ?
 
 > Data are commonly understood to be the raw material produced by abstracting the world into
@@ -175,6 +121,7 @@ sounds, electromagnetic waves, bits – that constitute the building blocks from
 => enregistrabilité
 => briques de base ("buildings blocks")
 
+---
 ## Données, données... quelles données ?
 
 > While many analysts may accept data at face value, and treat them as if they are neutral, objective, and pre-analytic in nature, data are in fact framed technically, economically, ethically, temporally, spatially and philosophically.
@@ -185,114 +132,151 @@ sounds, electromagnetic waves, bits – that constitute the building blocks from
 
 > « Décidément, on ne devrait jamais parler de “données”, mais toujours d’“obtenues”. » - Bruno Latour, 1993
 
-
+---
 ## Données quantitatives et qualitatives
 
 - Données quantitatives : enregistrées sous forme de nombres
+
   + nominale (marié/célibataire/divorcé/veuf)
+
   + ordinale (faible, moyen, fort)
+
   + intervalles (température en degrés Celsius)
+
   + ratio (taille en cm)
   
+---
 ## Données quantitatives et qualitatives
 
 - Données qualitatives : non numérique => texte, image, vidéo, son, musique...
+
   + peut être convertie en données quantitatives
+
   + mais comment ?
+
   + risque de perdre la richesse des données originales
+
   + analyse qualitative
   
+---
 ## Données structurées et non structurées
 
 Données structurées : dotées d'un modèle
 
   + Ex : base de données relationnelle SQL
+  
   + Lisibles machine
+  
   + Faciles à analyser, manipuler, visualiser...
 
 Données semi-structurées : pas de modèle prédéfini. Structure irrégulière, implicite... mais données organisées néanmoins, ensemble raisonnable de champs
 
   + Exemple : XML, JSON
+  
   + possible de trier, ordonner et structurer les données
   
+---
 ## Données structurées et non structurées
 
 Données non structurées : pas de structure commune identifiable
 
   + Exemple : BDD NoSQL
+  
   + généralement qualitatives
+  
   + difficilement combinées ou analysées quantitativement
-  + les données non structurées croitraient 15x plus que les données structurées
+  
+  + les données non structurées croîtraient 15x plus que les données structurées
+  
   + machine learning de + en + capable d'analyser ces données. 
   
+---
 ## Données capturées et données échappées
 
 - Données capturées : observation, enquête, expérimentation, prise de notes, senseurs... => intention de générer des données
+
 - Données échappées : sous-produit d'un engin ou d'un système dont la fonction première est autre
+
 - Données transitoires : échappées qui ne sont jamais examinées, transformées ou analysées
 
 => brutes car non converties ou combinées
 
+---
 ## Données dérivées
 
 - Résultat d'un traitement ou une analyse supplémentaire de données capturées. 
+
 - Souvent le résultat d'un modèle
 
+---
 ## Données dérivées
 
 ![hauteur](./img/nasa.jpg)
 
+---
 ## Données primaires, secondaires et tertaires
 
 - primaires : générées par un chercheur dans un cadre expérimental
+
 - secondaires : mises à disposition d'autrui pour être réutilisées
+
 - tertiaires : données dérivées : décomptes, catégories, résultats statistiques
 
 Ex : recensement => pas diffusé comme données primaires et secondaires avant communicabilité des archives, diffusé comme données tertiaires
 
+---
 ## Index, attributs, métadonnées
 
 - index : permettent l'identification et la mise en relation. Essentiels pour enrichir les données
+
 - attributs : représentent les aspects d'un phénomène, mais ne sont pas des index (pas identifiants uniques)
+
 - metadata : données sur les données. Peuvent être descriptives, structurelles ou administratives. Standard : Dublin Core. 
 
-## Bayésiens et fréquentistes
-
-- fréquentistes : le monde existe indépendamment de nos interactions avec lui. Données issues d'un échantillon aléatoire, réplicable (fréquence). Expériences et tests statistiques : un énon cé est falsifié ou non falsifié.
-- bayésiens : la statistique porte sur les croyances à l'égard du monde, qu'on fait évoluer au regard des données collectées
-
-## Bayésiens et fréquentistes
-
-![hauteur](./img/Thomas_Bayes.gif)
-
+---
+class: inverse, center, middle
 # Le pipeline de données
 
+---
 ## Le pipeline de données
 
 ![largeur](./img/pipeline.png)
-
+---
 ## Trouver les données 
 
 - Comment faites-vous ?
+
 - Dépôts internes
+
 - CDO
+
 - Dépôts externes (ex. www.data.gouv.fr)
 
+---
 ## Acquérir les données
 
 - format des données 
+
 - qualité des données
+
 - documentation des données / métadonnées
+
 - ETL / connecteurs
+
 - données "chaudes" / données "froides" (stock/flux)
 
+---
 ## Vérifier les données
 
 - sanity check
+
 - comparer à un schéma théorique
+
 - tests qualité (voir http://infolabs.io/qualite-donnees)
+
 - les mauvaises données sont partout https://github.com/Quartz/bad-data-guide
 
+---
 ## Nettoyer les données
 
 - paradigme du [_tidy data_](http://vita.had.co.nz/papers/tidy-data.pdf) (Hadley Wickham)
@@ -301,145 +285,111 @@ Ex : recensement => pas diffusé comme données primaires et secondaires avant c
 
 > “Tidy datasets are all alike, but every messy dataset is messy in its own way.” – Hadley Wickham
 
+---
 ## Nettoyer les données
 
-- paradigme du [_tidy data_](http://vita.had.co.nz/papers/tidy-data.pdf) (Hadley Wickham)
 - chaque variable correspond à une colonne
+
 - chaque observation/individu correspond à une ligne
+
 - chaque type d'unité d'observation correspond à une table
+
 - chaque cellule comporte une donnée 
 
-## Nettoyer les données
-
-5 problèmes fréquents :
-
-- *les noms des colonnes sont des valeurs, pas des variables*
-
-## Nettoyer les données
-
-![largeur](./img/pewrow.png)
-
-## Nettoyer les données
-
-![largeur](./img/pewlong.png)
-
-## Nettoyer les données
-
-5 problèmes fréquents :
-
-- les noms des colonnes sont des valeurs, pas des variables 
-- *plusieurs variables dans une colonne*
-
-## Nettoyer les données
-
-![largeur](./img/tbcol.png)
-
-## Nettoyer les données
-
-![largeur](./img/tbtidy.png)
-
-## Nettoyer les données
-
-5 problèmes fréquents :
-
-- les noms des colonnes sont des valeurs, pas des variables 
-- plusieurs variables dans une colonne
-- *les variables sont stockées à la fois dans les lignes et les colonnes*
-
-## Nettoyer les données
-
-![largeur](./img/weathermessy.png)
-
-## Nettoyer les données
-
-![largeur](./img/weathertidy.png)
-
-## Nettoyer les données
-
-5 problèmes fréquents :
-
-- les noms des colonnes sont des valeurs, pas des variables 
-- plusieurs variables dans une colonne
-- les variables sont stockées à la fois dans les lignes et les colonnes
-- *plusieurs types dans une table*
-
-## Nettoyer les données
-
-![largeur](./img/billboardmessy.png)
-
-## Nettoyer les données
-
-![largeur](./img/billboardtidy.png)
-
-## Nettoyer les données
-
-5 problèmes fréquents :
-
-- les noms des colonnes sont des valeurs, pas des variables 
-- plusieurs variables dans une colonne
-- les variables sont stockées à la fois dans les lignes et les colonnes
-- plusieurs types dans une table
-- *un type dans plusieurs tables*
-
+---
 ## Analyser les données
 
 - indicateurs
+
 - tabulations
+
 - modèles
+
 - machine learning
+
 - simulation
+
 - etc.
 
+---
 ## Présenter les résultats
 
 - datavisualisation
+
 - génération automatique de rapports
+
 - application
+
 - etc. 
 
+---
+class: inverse, center, middle
 # Open data, big data, linked data...
 
+---
 ## Open data
 
 Voir https://www.cairn.info/revue-informations-sociales-2015-5-page-26.htm
 
 - Art 15 DDHC : "La Société a le droit de demander compte à tout Agent public de son administration."
+
 - "open governement" (USA, 1960s)
+
 - 1966 : FOIA
+
 - 1978 : CADA (données personnelles exclues, CNIL)
 
+---
 ## Open data
 
 Justifications :
 
 - transparence / accountability
+
 - innovation / "pétrole"
+
 - modernisation de l'administration
 
+---
 ## Open data
 
 - données publiques, généralement de gestion
+
 - librement utilisables (licences)
+
 - pas de redevance
+
 - [_Open definition_](http://opendefinition.org/)
 
+---
 ## Big data
 
 - émerge vers 2007/2008 (mais occurrences anciennes)
-- trois V : "volume", "velocity", "variety"
+
+- trois V : "volume", "velocity", "variety" (+ "veracity")
+
 - Kitchin ajoute exhaustivité, la résolution, la scalability 
+
 - NoSQL (terme apparaît en 2009)
+
 - promesse d'efficience, de prédiction, de nouvelles formes de savoir
+ 
 - données généralement fermées et privées
 
+---
 ## Linked data
 
 - poussé par W3C et Tim Berners-Lee
-- http://linkeddata.org/
-- web sémantique / web des données
-- RDF / SPARQL
-- wikidata => http://projetjourdain.org/network/index.html
 
+- http://linkeddata.org/
+
+- web sémantique / web des données
+
+- RDF / SPARQL
+
+- wikidata => http://histropedia.com/timeline/r7bwtpg9bg0t/Olympique-de-Marseille
+
+---
 ## API
 
 - Application programming interface => un programme vu de la surface
@@ -447,26 +397,12 @@ Justifications :
 - donnée dynamique => partage partiel
 - un exemple : [overpass turbo](https://overpass-turbo.eu/)
 
-# Cadre juridique et protection de la vie privée
-
-## Cadre juridique de l'open data
-
-- [circulaire et vade mecum de 2013](https://www.etalab.gouv.fr/lepremierministreadresseaugouvernementlacirculairesurlouvertureetlepartagedesdonneespubliquesetlevade-mecumdelopendata)
-- lois NOTRE et Lemaire : principe de l'ouverture par défaut
-- Licence ouverte : permet la réutilisation la plus large
-- principes opposés : données nominatives, données personnelles, secrets prévus par la loi (défense, statistique, médical, commercial...)
-
-## Tout savoir sur l'open data au concret
-
-- [Guide Open Data France](http://www.opendatafrance.net/wp-content/uploads/2016/06/guideOD_communes_lois_juin2016_Web.pdf)
-- [Le rapport Trojette](http://www.modernisation.gouv.fr/laction-publique-se-transforme/en-ouvrant-les-donnees-publiques/remise-du-rapport-trojette-sur-louverture-des-donnees-publiques)
-- [Etat des lieux juridiques](https://www.cairn.info/revue-les-cahiers-du-numerique-2013-1-page-21.htm)
-
-
-# Evaluation
-
+---
+class:inverse, center, middle
 ## Evaluation
 
 https://frama.link/eval_mrs
 
+---
+class: inverse, center, middle
 Merci !
