@@ -24,12 +24,13 @@ background-size: cover
 background-position: 50% 50%
 
 # Introduction au big data
-## Datactivist
 
+</BR>
 </BR>
 </BR>
 
 ### Samuel Goëta et Joël Gombin
+<img src="./img/Logo_DATACTIVIST_TW.png" height="100px" />
 
 .right[.footnote[<a href='https://commons.wikimedia.org/wiki/File%3ASeurat-Gravelines-Annonciade.jpg'>source</a>]]
 
@@ -44,7 +45,8 @@ Pad collaboratif : https://frama.link/bigdata_marseille_EM
 
 ---
 ## 5 minutes, 20 données
-
+<br/>
+.pull-right[![](./img/loupe.jpg)]
 - vous avez 5 minutes
 
 - vous devez trouver 20 données dans notre environnement immédiat
@@ -72,17 +74,12 @@ D'après vous ?
 
 ---
 ## Aux sources de la mise en données du monde
-
+.pull-right[![](./img/wholeearthcatalog.jpg)]
 - Rencontre, dans la Californie des années 1960, entre la Nouvelle Gauche et les Nouveaux Communalistes sur fond de LSD et de recherche militaire
 
 - L'inspiration de la cybernétique (N. Wiener) : objets techniques et êtres humains constituent un même système sociotechhnique, régulé par l'information
 
 - Exemple de Steward Brand, fondateur du _Whole Earth Catalog_ puis de Wired => ["Forest Gump de l'Internet"](https://questionsdecommunication.revues.org/8619)
-
----
-## Aux sources de la mise en données du monde
-
-.reduite[.center[![](./img/wholeearthcatalog.jpg)]]
 
 ---
 ## Etymologie
