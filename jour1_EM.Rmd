@@ -38,7 +38,7 @@ class: center, middle
 
 Retrouvez les matériaux sur https://github.com/datactivist/formation_marseille 
 
-Ces slides en ligne : www.datactivi.st/formation_marseille/jour1_EM.html
+Ces slides en ligne : http://datactivi.st/formation_marseille/jour1_EM.html
 
 Pad collaboratif : https://frama.link/bigdata_marseille_EM
 
