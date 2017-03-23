@@ -82,7 +82,7 @@ D'après vous ?
 .pull-right[![](./img/wholeearthcatalog.jpg)]
 - Rencontre, dans la Californie des années 1960, entre la Nouvelle Gauche et les Nouveaux Communalistes sur fond de LSD et de recherche militaire
 
-- L'inspiration de la cybernétique (N. Wiener) : objets techniques et êtres humains constituent un même système sociotechhnique, régulé par l'information
+- L'inspiration de la cybernétique (N. Wiener) : objets techniques et êtres humains constituent un même système sociotechnique, régulé par l'information
 
 - Exemple de Steward Brand, fondateur du _Whole Earth Catalog_ puis de Wired => ["Forest Gump de l'Internet"](https://questionsdecommunication.revues.org/8619)
 
