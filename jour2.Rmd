@@ -68,7 +68,7 @@ Hal Varian (Chief economist, Google), The McKinsey Quarterly, January 2009
 ## Le rôle de l'informatique
 
 - statistique classique : les problèmes doivent pouvoir être résolus de manière analytique (d'où le succès du fréquentisme)
-- le développement de la puissance de calcul permet de résoudre des problèmes statistiques par la simulation ([MCMC][https://fr.wikipedia.org/wiki/M%C3%A9thode_de_Monte-Carlo_par_cha%C3%AEnes_de_Markov])
+- le développement de la puissance de calcul permet de résoudre des problèmes statistiques par la simulation ([MCMC](https://fr.wikipedia.org/wiki/M%C3%A9thode_de_Monte-Carlo_par_cha%C3%AEnes_de_Markov))
 
 ## Développement de la puissance de calcul
 
