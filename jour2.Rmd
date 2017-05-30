@@ -182,7 +182,7 @@ comparer entre eux).
 sur la variable dépendante *toutes choses égales par ailleurs*,
 c’est-à-dire en neutralisant l’effet des autres variables.
 - La qualité globale du modèle peut être quantifié au travers du
-*R^2*, qui représente la part de variance (de la variable
+$R^2$, qui représente la part de variance (de la variable
 dépendante) expliquée.
 - Pour les variables indépendantes catégoriques, on estime un
 coefficient par modalité, à l’exception de la première
